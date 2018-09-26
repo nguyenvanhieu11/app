@@ -18,4 +18,9 @@
         android:progress="10"
         android:max="100"
         android:layout_height="10dp" />
+    <Button
+        android:text="chuyen man"
+        android:id="@+id/next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 </RelativeLayout>
