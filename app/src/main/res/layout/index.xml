@@ -7,7 +7,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <LinearLayout
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="5dp"
         android:weightSum="10"
         android:orientation="horizontal"
         android:layout_width="match_parent"
@@ -23,7 +23,7 @@
             android:inputType="text" />
 
         <ImageButton
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="8dp"
             android:id="@+id/searchIndexbtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -33,12 +33,11 @@
 
     </LinearLayout>
     <RelativeLayout
-        android:layout_marginLeft="6dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <GridView
-            android:verticalSpacing="5dp"
+            android:verticalSpacing="0dp"
             android:horizontalSpacing="0dp"
             android:id="@+id/gridViewImg"
             android:layout_width="match_parent"
