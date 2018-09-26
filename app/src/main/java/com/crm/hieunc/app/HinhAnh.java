@@ -1,20 +1,20 @@
 package com.crm.hieunc.app;
 
 public class HinhAnh {
-    private String danhmuc;
+    private String DanhMuc;
     private int Hinh;
 
-    public HinhAnh(String danhmuc, int hinh) {
-        danhmuc = danhmuc;
+    public HinhAnh(String danhMuc, int hinh) {
+        DanhMuc = danhMuc;
         Hinh = hinh;
     }
 
-    public String getDanhmuc() {
-        return danhmuc;
+    public String getDanhMuc() {
+        return DanhMuc;
     }
 
-    public void setDanhmuc(String danhmuc) {
-        danhmuc = danhmuc;
+    public void setDanhMuc(String danhMuc) {
+        DanhMuc = danhMuc;
     }
 
     public int getHinh() {
