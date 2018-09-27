@@ -57,7 +57,7 @@ public class Index extends AppCompatActivity{
         checkdanhmuc();
     }
 
-    private void eventSearch(){
+    public void eventSearch(){
         imgbtnsearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -5,7 +5,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TabHost;
 
-public class SanPham  extends AppCompatActivity{
+public class SanPham  extends Index{
 
     TabHost tabhost;
     @Override
@@ -13,10 +13,11 @@ public class SanPham  extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_sanpham);
 
-        khoitao();
+        anhXa();
+        eventSearch();
     }
 
-    private void khoitao() {
+    private void anhXa() {
         tabhost = (TabHost)findViewById(R.id.tabHost);
         tabhost.setup();
 
@@ -36,7 +37,7 @@ public class SanPham  extends AppCompatActivity{
         tabhost.addTab(tab3);
 
         TabHost.TabSpec tab4 = tabhost.newTabSpec("Tab04");
-        tab4.setIndicator("",getResources().getDrawable(R.drawable.setting));
+        tab4.setIndicator("",getResources().getDrawable(R.drawable.search));
         tab4.setContent(R.id.tab4);
         tabhost.addTab(tab4);
 
