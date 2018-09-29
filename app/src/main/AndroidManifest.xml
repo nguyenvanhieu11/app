@@ -19,5 +19,4 @@
         <activity android:name=".Index"></activity>
         <activity android:name=".SanPham"></activity>
     </application>
-
 </manifest>

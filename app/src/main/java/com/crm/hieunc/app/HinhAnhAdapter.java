@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import java.util.List;
 
@@ -38,6 +39,7 @@ public class HinhAnhAdapter extends BaseAdapter {
 
     private class ViewHolder{
         ImageView imgHinh;
+        TextView txtTen;
     }
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
@@ -46,13 +48,18 @@ public class HinhAnhAdapter extends BaseAdapter {
             holder = new ViewHolder();
             LayoutInflater inflater  = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             view = inflater.inflate(layout,null);
+
+            holder.txtTen = (TextView)view.findViewById(R.id.namecustom);
             holder.imgHinh = (ImageView)view.findViewById(R.id.imageView);
             view.setTag(holder);
         }else{
             holder = (ViewHolder) view.getTag();
         }
+
+
         HinhAnh hinhAnh = hinhAnhList.get(i);
         holder.imgHinh.setImageResource(hinhAnh.getHinh());
+        holder.txtTen.setText(hinhAnh.getDanhMuc());
 
         return view;
     }

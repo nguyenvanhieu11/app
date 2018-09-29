@@ -6,10 +6,13 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <ImageView
+        android:layout_margin="10dp"
+        android:layout_marginLeft="10dp"
         android:id="@+id/imgViewproduct"
         android:layout_width="90dp"
         android:layout_height="90dp" />
     <LinearLayout
+        android:layout_marginTop="12dp"
         android:weightSum="10"
         android:orientation="horizontal"
         android:layout_width="match_parent"
@@ -21,43 +24,26 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <TextView
+                android:id="@+id/nameProduct"
                 android:textSize="21dp"
                 android:text="Ten san pham"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
             <TextView
+                android:id="@+id/Address"
                 android:text="Dia chi"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
             <TextView
-
+                android:id="@+id/giaban"
                 android:text="gia ban"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
             <TextView
+                android:id="@+id/tinhtrang"
                 android:text="tinh trang"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
         </LinearLayout>
-
-        <LinearLayout
-            android:layout_weight="9"
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <ImageButton
-                android:background="@null"
-                android:id="@+id/imageButton3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                app:srcCompat="@android:drawable/sym_action_call" />
-
-        </LinearLayout>
-
-
-
-
     </LinearLayout>
 </LinearLayout>

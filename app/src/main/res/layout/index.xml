@@ -3,9 +3,28 @@
     android:layout_height="match_parent"
     android:layout_width="match_parent"
     android:orientation="vertical"
-    android:background="#427b91"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Toolbar
+            android:background="#427b91"
+            android:id="@+id/toolber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageButton
+                android:color="#000"
+                android:background="@null"
+                android:id="@+id/imageButton2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                app:srcCompat="@android:drawable/ic_menu_sort_by_size" />
+        </Toolbar>
+
+    </RelativeLayout>
     <LinearLayout
         android:layout_marginTop="5dp"
         android:weightSum="10"
@@ -37,7 +56,7 @@
         android:layout_height="match_parent">
 
         <GridView
-            android:verticalSpacing="0dp"
+            android:verticalSpacing="1dp"
             android:horizontalSpacing="0dp"
             android:id="@+id/gridViewImg"
             android:layout_width="match_parent"

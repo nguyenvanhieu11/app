@@ -4,6 +4,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
@@ -12,11 +15,13 @@ import android.widget.GridView;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
+import android.widget.Toolbar;
 
 import java.util.ArrayList;
 
 public class Index extends AppCompatActivity{
 
+    Toolbar toolber;
     GridView gvImg;
     ArrayList<HinhAnh> arrayImg;
     HinhAnhAdapter adapter;
@@ -27,6 +32,8 @@ public class Index extends AppCompatActivity{
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.index);
+
+        toolber = (Toolbar)findViewById(R.id.toolber);
 
         khoitao();
         adapter = new HinhAnhAdapter(this,R.layout.column_image,arrayImg);
@@ -45,7 +52,7 @@ public class Index extends AppCompatActivity{
         arrayImg.add(new HinhAnh("me & be", R.drawable.me_be));
         arrayImg.add(new HinhAnh("thu cung", R.drawable.thucung));
         arrayImg.add(new HinhAnh("xe co", R.drawable.anh1));
-        arrayImg.add(new HinhAnh("xe co", R.drawable.anh2));
+        arrayImg.add(new HinhAnh("trang suc", R.drawable.anh2));
         arrayImg.add(new HinhAnh("xe co", R.drawable.anh3));
         arrayImg.add(new HinhAnh("xe co", R.drawable.anh4));
         arrayImg.add(new HinhAnh("xe co", R.drawable.anh5));
@@ -75,6 +82,4 @@ public class Index extends AppCompatActivity{
             }
         });
     }
-
-
 }
