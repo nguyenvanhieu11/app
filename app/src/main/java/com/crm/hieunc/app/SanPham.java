@@ -4,12 +4,18 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.view.Menu;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TabHost;
 
 import java.util.ArrayList;
+
+import static com.crm.hieunc.app.R.drawable.customer_imgheart;
+import static com.crm.hieunc.app.R.menu.menu_item;
 
 public class SanPham  extends Index{
 
@@ -20,10 +26,18 @@ public class SanPham  extends Index{
     ArrayList<Home1> arrayList;
     HomeAdapter adapter;
 
+    Toolbar toolbar;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_sanpham);
+
+        toolbar = (Toolbar)findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("");
+
+
 
         anhXa();
         eventSearch();
@@ -82,5 +96,12 @@ public class SanPham  extends Index{
         arrayList.add(new Home1("laptop macbooks 2007","Ha Noi",R.drawable.thucung,"32.000.000","còn hàng"));
         arrayList.add(new Home1("laptop macbooks 2008","Ha Noi",R.drawable.giadung,"32.000.000","còn hàng"));
         arrayList.add(new Home1("laptop macbooks 2010","Ha Noi",R.drawable.me_be,"32.000.000","còn hàng"));
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_item,menu);
+        return true;
+
     }
 }

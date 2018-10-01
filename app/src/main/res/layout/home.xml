@@ -34,16 +34,57 @@
                 android:text="Dia chi"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
-            <TextView
-                android:id="@+id/giaban"
-                android:text="gia ban"
+            <LinearLayout
+                android:weightSum="10"
+                android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-            <TextView
-                android:id="@+id/tinhtrang"
-                android:text="tinh trang"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_weight="7"
+                    android:orientation="vertical"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:id="@+id/giaban"
+                        android:text="gia ban"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:id="@+id/tinhtrang"
+                        android:text="tinh trang"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_weight="3"
+                    android:orientation="horizontal"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content">
+
+                    <Button
+                        android:id="@+id/heart"
+                        android:background="@drawable/customer_imgheart"
+                        android:layout_height="20dp"
+                        android:layout_width="20dp"/>
+                    <Button
+                        android:id="@+id/like"
+                        android:background="@drawable/like"
+                        android:layout_height="23dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_width="23dp"/>
+                    <Button
+                        android:id="@+id/dislike"
+                        android:layout_marginLeft="5dp"
+                        android:background="@drawable/dislike"
+                        android:layout_height="23dp"
+                        android:layout_width="23dp"/>
+
+                </LinearLayout>
+            </LinearLayout>
+
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>

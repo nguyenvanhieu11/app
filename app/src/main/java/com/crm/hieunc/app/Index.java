@@ -19,9 +19,9 @@ import android.widget.Toolbar;
 
 import java.util.ArrayList;
 
-public class Index extends AppCompatActivity{
+public class Index extends AppCompatActivity {
 
-    Toolbar toolber;
+   
     GridView gvImg;
     ArrayList<HinhAnh> arrayImg;
     HinhAnhAdapter adapter;
@@ -33,20 +33,19 @@ public class Index extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.index);
 
-        toolber = (Toolbar)findViewById(R.id.toolber);
 
         khoitao();
-        adapter = new HinhAnhAdapter(this,R.layout.column_image,arrayImg);
+        adapter = new HinhAnhAdapter(this, R.layout.column_image, arrayImg);
         gvImg.setAdapter(adapter);
 
     }
 
     private void khoitao() {
-        gvImg = (GridView)findViewById(R.id.gridViewImg);
-        edtsearch = (EditText)findViewById(R.id.searchIndex);
+        gvImg = (GridView) findViewById(R.id.gridViewImg);
+        edtsearch = (EditText) findViewById(R.id.searchIndex);
         imgbtnsearch = (ImageButton) findViewById(R.id.searchIndexbtn);
 
-        gvImg = (GridView)findViewById(R.id.gridViewImg);
+        gvImg = (GridView) findViewById(R.id.gridViewImg);
         arrayImg = new ArrayList<>();
         arrayImg.add(new HinhAnh("dien tu", R.drawable.dientu));
         arrayImg.add(new HinhAnh("me & be", R.drawable.me_be));
@@ -64,20 +63,20 @@ public class Index extends AppCompatActivity{
         checkdanhmuc();
     }
 
-    public void eventSearch(){
+    public void eventSearch() {
         imgbtnsearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(Index.this,edtsearch.getText().toString(),Toast.LENGTH_SHORT).show();
+                Toast.makeText(Index.this, edtsearch.getText().toString(), Toast.LENGTH_SHORT).show();
             }
         });
     }
 
-    private void checkdanhmuc(){
+    private void checkdanhmuc() {
         gvImg.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Intent intent = new Intent(Index.this,SanPham.class);
+                Intent intent = new Intent(Index.this, SanPham.class);
                 startActivity(intent);
             }
         });

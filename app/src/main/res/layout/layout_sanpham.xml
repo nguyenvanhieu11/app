@@ -8,21 +8,36 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <Toolbar
-            android:background="#437b91"
+        <!--<Toolbar-->
+            <!--android:background="#437b91"-->
+            <!--android:id="@+id/toolbar"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content">-->
+
+            <!--<ImageButton-->
+                <!--android:background="@null"-->
+                <!--android:id="@+id/backActivity"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_weight="1"-->
+                <!--app:srcCompat="?attr/actionModeCloseDrawable" />-->
+
+        <!--</Toolbar>-->
+        <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
+            android:background="#427b91"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:minHeight="?attr/actionBarSize">
 
             <ImageButton
-                android:background="@null"
                 android:id="@+id/backActivity"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:background="@null"
                 app:srcCompat="?attr/actionModeCloseDrawable" />
-
-        </Toolbar>
+        </android.support.v7.widget.Toolbar>
     </LinearLayout>
     <RelativeLayout
         android:layout_width="match_parent"
