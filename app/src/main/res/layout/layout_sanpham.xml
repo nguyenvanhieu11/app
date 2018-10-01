@@ -8,7 +8,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <Toolbar
+        <android.support.v7.widget.Toolbar
             android:background="#437b91"
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
@@ -22,7 +22,7 @@
                 android:layout_weight="1"
                 app:srcCompat="?attr/actionModeCloseDrawable" />
 
-        </Toolbar>
+        </android.support.v7.widget.Toolbar>
     </LinearLayout>
     <RelativeLayout
         android:layout_width="match_parent"
