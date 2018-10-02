@@ -7,5 +7,13 @@
         android:icon="@drawable/search"
         app:showAsAction="always"
         android:title="timkiem" />
+    <item
+        android:id="@+id/seting"
+        android:icon="@drawable/setting"
+        android:title="timkiem" />
+    <item
+        android:id="@+id/demo"
+        android:icon="@drawable/home"
+        android:title="timkiem" />
 
 </menu>
