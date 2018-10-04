@@ -77,7 +77,7 @@
                         android:layout_width="23dp"/>
                     <Button
                         android:id="@+id/dislike"
-                        android:layout_marginLeft="5dp"
+                        android:layout_marginLeft="3dp"
                         android:background="@drawable/dislike"
                         android:layout_height="23dp"
                         android:layout_width="23dp"/>

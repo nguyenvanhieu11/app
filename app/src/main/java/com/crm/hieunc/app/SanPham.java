@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.annotation.RequiresApi;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TabHost;
@@ -36,6 +37,8 @@ public class SanPham  extends Index{
         khoitao();
         adapter = new HomeAdapter(this,R.layout.home,arrayList);
         lvHome.setAdapter(adapter);
+
+        sendActivityDetail();
 
     }
 
@@ -87,5 +90,16 @@ public class SanPham  extends Index{
         arrayList.add(new Home1("laptop macbooks 2007","Ha Noi",R.drawable.thucung,"32.000.000","còn hàng"));
         arrayList.add(new Home1("laptop macbooks 2008","Ha Noi",R.drawable.giadung,"32.000.000","còn hàng"));
         arrayList.add(new Home1("laptop macbooks 2010","Ha Noi",R.drawable.me_be,"32.000.000","còn hàng"));
+
+    }
+
+    private void sendActivityDetail(){
+        lvHome.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent intent1 = new Intent(SanPham.this,Detail_product.class);
+                startActivity(intent1);
+            }
+        });
     }
 }
