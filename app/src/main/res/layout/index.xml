@@ -1,17 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_height="match_parent"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:orientation="vertical"
-    android:background="#427b91"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!--<RelativeLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content">-->
+        <!--<android.support.v7.widget.Toolbar-->
+            <!--android:id="@+id/toolbar"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:background="#427b91">-->
+
+            <!--<ImageButton-->
+                <!--android:id="@+id/imageButton2"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:background="@null"-->
+                <!--android:color="#000"-->
+                <!--app:srcCompat="@android:drawable/ic_menu_sort_by_size" />-->
+        <!--</android.support.v7.widget.Toolbar>-->
+
+    <!--</RelativeLayout>-->
 
     <LinearLayout
-        android:layout_marginTop="10dp"
-        android:weightSum="10"
-        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:orientation="horizontal"
+        android:weightSum="10">
 
         <EditText
             android:id="@+id/searchIndex"
@@ -23,28 +42,28 @@
             android:inputType="text" />
 
         <ImageButton
-            android:layout_marginTop="10dp"
             android:id="@+id/searchIndexbtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
             android:layout_weight="2"
             android:background="@null"
             app:srcCompat="@android:drawable/ic_menu_search" />
 
     </LinearLayout>
+
     <RelativeLayout
-        android:layout_marginLeft="6dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <GridView
-            android:verticalSpacing="5dp"
-            android:horizontalSpacing="0dp"
             android:id="@+id/gridViewImg"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_centerHorizontal="true"
-            android:numColumns="3" />
+            android:horizontalSpacing="0dp"
+            android:numColumns="3"
+            android:verticalSpacing="1dp" />
     </RelativeLayout>
 
 </LinearLayout>
