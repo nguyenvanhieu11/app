@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
 
             public void onFinish() {
 
-                Intent intent = new Intent(MainActivity.this,Index.class);
+                Intent intent = new Intent(MainActivity.this,HomePage.class);
                 startActivity(intent);
 //                Toast.makeText(MainActivity.this, "xong", Toast.LENGTH_SHORT).show();
             }

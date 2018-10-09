@@ -5,13 +5,13 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <ImageView
-        android:src="@drawable/cho"
+        android:src="@drawable/index"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
     <ProgressBar
         android:id="@+id/pbLoad"
-        android:layout_marginTop="380dp"
+        android:layout_marginTop="450dp"
         android:layout_centerHorizontal="true"
         style="@android:style/Widget.ProgressBar.Horizontal"
         android:layout_width="300dp"

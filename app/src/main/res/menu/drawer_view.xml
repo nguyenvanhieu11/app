@@ -3,8 +3,8 @@
 
     <item
         android:id="@+id/login"
-        android:icon="@drawable/user"
-        android:title="Dang ky / Dang nhap" />
+        android:icon="@drawable/ic_user"
+        android:title="Đăng ký / Đăng nhập" />
     <group android:checkableBehavior="single">
         <item
 

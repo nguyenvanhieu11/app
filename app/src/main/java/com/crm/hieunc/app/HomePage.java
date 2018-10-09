@@ -8,6 +8,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
@@ -36,6 +37,11 @@ public class HomePage extends AppCompatActivity {
         actionbar.setHomeAsUpIndicator(R.drawable.ic_hamberger);
 
         NavigationView navigationView = findViewById(R.id.nav_view);
+
+        if(savedInstanceState == null){
+            getSupportFragmentManager().beginTransaction().replace(R.id.content_frame, new TrangChu()).commit();
+            navigationView.setCheckedItem(R.id.home);
+        }
 
 
         navigationView.setNavigationItemSelectedListener(
@@ -114,8 +120,13 @@ public class HomePage extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_prop, menu);
+        return true;
+    }
 
-//    private void khoitao() {
+    //    private void khoitao() {
 //        gvImg = (GridView) findViewById(R.id.gridViewImg);
 //        edtsearch = (EditText) findViewById(R.id.searchIndex);
 //        imgbtnsearch = (ImageButton) findViewById(R.id.searchIndexbtn);

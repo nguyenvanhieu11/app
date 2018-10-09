@@ -10,6 +10,7 @@ import android.widget.AdapterView;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TabHost;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -69,7 +70,7 @@ public class SanPham extends Index {
         butonBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(SanPham.this, Index.class);
+                Intent intent = new Intent(SanPham.this, HomePage.class);
                 startActivity(intent);
             }
         });
@@ -87,6 +88,13 @@ public class SanPham extends Index {
         arrayList.add(new Home1("laptop macbooks 2007", "Ha Noi", R.drawable.thucung, "32.000.000", "còn hàng"));
         arrayList.add(new Home1("laptop macbooks 2008", "Ha Noi", R.drawable.giadung, "32.000.000", "còn hàng"));
         arrayList.add(new Home1("laptop macbooks 2010", "Ha Noi", R.drawable.me_be, "32.000.000", "còn hàng"));
+
+        lvHome.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Toast.makeText(SanPham.this,"hhihi",Toast.LENGTH_SHORT).show();
+            }
+        });
 
     }
 
