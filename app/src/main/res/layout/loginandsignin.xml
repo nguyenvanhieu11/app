@@ -30,6 +30,7 @@
         android:inputType="textPassword"
         android:layout_height="wrap_content" />
     <CheckBox
+        android:id="@+id/remember"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/password"
@@ -46,6 +47,7 @@
         android:layout_marginLeft="250dp"
         android:layout_marginTop="16dp"/>
     <LinearLayout
+        android:id="@+id/ln1"
         android:orientation="horizontal"
         android:weightSum="10"
         android:layout_below="@+id/quenmk"
@@ -72,5 +74,23 @@
             android:layout_height="wrap_content" />
 
     </LinearLayout>
+
+    <RelativeLayout
+        android:layout_below="@+id/ln1"
+        android:layout_marginTop="25dp"
+        android:layout_centerHorizontal="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/dangky"
+            android:background="#3aa936"
+            android:textColor="#fff"
+            android:layout_width="350dp"
+            android:text="Đăng ký"
+            android:layout_height="wrap_content"
+           android:layout_centerHorizontal="true"/>
+
+    </RelativeLayout>
 
 </RelativeLayout>
