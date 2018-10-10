@@ -16,12 +16,6 @@ public class HomePage extends AppCompatActivity {
     private DrawerLayout mDrawerLayout;
     Toolbar toolbar;
 
-//    GridView gvImg;
-//    ArrayList<HinhAnh> arrayImg;
-//    HinhAnhAdapter adapter;
-//    EditText edtsearch;
-//    ImageButton imgbtnsearch;
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,7 +32,7 @@ public class HomePage extends AppCompatActivity {
 
         NavigationView navigationView = findViewById(R.id.nav_view);
 
-        if(savedInstanceState == null){
+        if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction().replace(R.id.content_frame, new TrangChu()).commit();
             navigationView.setCheckedItem(R.id.home);
         }
@@ -69,10 +63,18 @@ public class HomePage extends AppCompatActivity {
                             case R.id.login:
                                 getSupportFragmentManager().beginTransaction().replace(R.id.content_frame, new Login()).commit();
                                 break;
+                            case R.id.historynote:
+                                getSupportFragmentManager().beginTransaction().replace(R.id.content_frame, new History_Note()).commit();
+                                break;
+                            case R.id.historysearch:
+                                getSupportFragmentManager().beginTransaction().replace(R.id.content_frame, new History_Search()).commit();
+                                break;
+                            case R.id.helper:
+                                getSupportFragmentManager().beginTransaction().replace(R.id.content_frame, new Helper()).commit();
+                                break;
                             default:
                                 getSupportFragmentManager().beginTransaction().replace(R.id.content_frame, new TrangChu()).commit();
                                 break;
-
                         }
                         mDrawerLayout.closeDrawer(GravityCompat.START);
                         return true;
@@ -83,7 +85,6 @@ public class HomePage extends AppCompatActivity {
                 new DrawerLayout.DrawerListener() {
                     @Override
                     public void onDrawerSlide(View drawerView, float slideOffset) {
-                        // Respond when the drawer's position changes
                     }
 
                     @Override
@@ -102,12 +103,6 @@ public class HomePage extends AppCompatActivity {
                     }
                 }
         );
-
-//        khoitao();
-//        adapter = new HinhAnhAdapter(this, R.layout.column_image, arrayImg);
-//        gvImg.setAdapter(adapter);
-
-
     }
 
     @Override
@@ -125,47 +120,4 @@ public class HomePage extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.menu_prop, menu);
         return true;
     }
-
-    //    private void khoitao() {
-//        gvImg = (GridView) findViewById(R.id.gridViewImg);
-//        edtsearch = (EditText) findViewById(R.id.searchIndex);
-//        imgbtnsearch = (ImageButton) findViewById(R.id.searchIndexbtn);
-//
-//        gvImg = (GridView) findViewById(R.id.gridViewImg);
-//        arrayImg = new ArrayList<>();
-//        arrayImg.add(new HinhAnh("dien tu", R.drawable.dientu));
-//        arrayImg.add(new HinhAnh("me & be", R.drawable.me_be));
-//        arrayImg.add(new HinhAnh("thu cung", R.drawable.thucung));
-//        arrayImg.add(new HinhAnh("xe co", R.drawable.anh1));
-//        arrayImg.add(new HinhAnh("trang suc", R.drawable.anh2));
-//        arrayImg.add(new HinhAnh("xe co", R.drawable.anh3));
-//        arrayImg.add(new HinhAnh("xe co", R.drawable.anh4));
-//        arrayImg.add(new HinhAnh("xe co", R.drawable.anh5));
-//        arrayImg.add(new HinhAnh("gia dung", R.drawable.giadung));
-//        arrayImg.add(new HinhAnh("xe co", R.drawable.anh6));
-//        arrayImg.add(new HinhAnh("xe co", R.drawable.nh7));
-//        arrayImg.add(new HinhAnh("xe co", R.drawable.xeco));
-//        eventSearch();
-//        checkdanhmuc();
-//    }
-//
-//    public void eventSearch() {
-//        imgbtnsearch.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Toast.makeText(HomePage.this, edtsearch.getText().toString(), Toast.LENGTH_SHORT).show();
-//            }
-//        });
-//    }
-//
-//    private void checkdanhmuc() {
-//        gvImg.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-//                Intent intent = new Intent(HomePage.this, SanPham.class);
-//                startActivity(intent);
-//            }
-//        });
-//    }
-
 }

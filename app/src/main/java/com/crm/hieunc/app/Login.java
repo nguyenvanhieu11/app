@@ -87,6 +87,14 @@ public class Login extends Fragment {
             }
         });
 
+        btndangky.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent1 = new Intent(getActivity(),SignUp.class);
+                startActivity(intent1);
+            }
+        });
+
         return view;
     }
 

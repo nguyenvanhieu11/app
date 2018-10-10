@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.v7.widget.Toolbar
+            android:background="#437b91"
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageButton
+                android:background="@null"
+                android:id="@+id/backActivity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:srcCompat="?attr/actionModeCloseDrawable" />
+
+        </android.support.v7.widget.Toolbar>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/txtheader"
+            android:layout_marginTop="30dp"
+            android:layout_centerHorizontal="true"
+            android:textSize="30dp"
+            android:textColor="#427b91"
+            android:text="Đăng Ký Thành Viên"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <ImageView
+            android:layout_marginTop="75dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/user"
+            android:layout_centerHorizontal="true"/>
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="match_parent">
+        <EditText
+            android:id="@+id/hoten"
+            android:layout_width="350dp"
+            android:layout_gravity="center"
+            android:hint="Họ tên"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/tendn"
+            android:layout_width="350dp"
+            android:layout_gravity="center"
+            android:hint="Tên đăng nhập"
+            android:layout_height="wrap_content" />
+        <EditText
+            android:id="@+id/email"
+            android:layout_width="350dp"
+            android:layout_gravity="center"
+            android:hint="Email"
+            android:layout_height="wrap_content" />
+        <EditText
+            android:id="@+id/pass"
+            android:inputType="textPassword"
+            android:layout_width="350dp"
+            android:layout_gravity="center"
+            android:hint="PassWord"
+            android:layout_height="wrap_content" />
+        <EditText
+            android:id="@+id/sdt"
+            android:inputType="number"
+            android:layout_width="350dp"
+            android:layout_gravity="center"
+            android:hint="Số điện thoại"
+            android:layout_height="wrap_content" />
+        <LinearLayout
+            android:layout_marginTop="30dp"
+            android:layout_weight="10"
+            android:orientation="horizontal"
+            android:layout_width="350dp"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/btndk"
+                android:textColor="#fff"
+                android:layout_weight="5"
+                android:background="#2ea49c"
+                android:text="Đăng Ký"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <Button
+                android:id="@+id/btnhuy"
+                android:textColor="#fff"
+                android:layout_weight="5"
+                android:background="#6e120d"
+                android:text="Hủy"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
