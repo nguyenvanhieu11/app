@@ -19,5 +19,6 @@
         <activity android:name=".Index"></activity>
         <activity android:name=".SanPham"></activity>
         <activity android:name=".HomePage"></activity>
+        <activity android:name=".SignUp"></activity>
     </application>
 </manifest>

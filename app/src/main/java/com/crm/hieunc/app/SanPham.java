@@ -88,6 +88,12 @@ public class SanPham extends Index {
         arrayList.add(new Home1("laptop macbooks 2007", "Ha Noi", R.drawable.thucung, "32.000.000", "còn hàng"));
         arrayList.add(new Home1("laptop macbooks 2008", "Ha Noi", R.drawable.giadung, "32.000.000", "còn hàng"));
         arrayList.add(new Home1("laptop macbooks 2010", "Ha Noi", R.drawable.me_be, "32.000.000", "còn hàng"));
+        arrayList.add(new Home1("laptop macbooks 2010", "Ha Noi", R.drawable.me_be, "32.000.000", "còn hàng"));
+        arrayList.add(new Home1("laptop macbooks 2010", "Ha Noi", R.drawable.me_be, "32.000.000", "còn hàng"));
+        arrayList.add(new Home1("laptop macbooks 2010", "Ha Noi", R.drawable.me_be, "32.000.000", "còn hàng"));
+        arrayList.add(new Home1("laptop macbooks 2010", "Ha Noi", R.drawable.me_be, "32.000.000", "còn hàng"));
+        arrayList.add(new Home1("laptop macbooks 2010", "Ha Noi", R.drawable.me_be, "32.000.000", "còn hàng"));
+        arrayList.add(new Home1("laptop macbooks 2010", "Ha Noi", R.drawable.me_be, "32.000.000", "còn hàng"));
 
         lvHome.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override

@@ -5,41 +5,92 @@
     android:layout_marginTop="56dp">
 
 
-    <TabHost
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true">
+    <ImageView
+        android:id="@+id/user"
+        android:layout_marginTop="0dp"
+        android:layout_centerHorizontal="true"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:src="@drawable/user"/>
 
-        <LinearLayout
+    <EditText
+        android:layout_below="@+id/user"
+        android:layout_width="350dp"
+        android:hint="UserName"
+        android:id="@+id/username"
+        android:layout_centerHorizontal="true"
+        android:layout_height="wrap_content" />
+    <EditText
+        android:layout_below="@+id/username"
+        android:layout_width="350dp"
+        android:hint="PassWord"
+        android:layout_marginTop="25dp"
+        android:id="@+id/password"
+        android:layout_centerHorizontal="true"
+        android:inputType="textPassword"
+        android:layout_height="wrap_content" />
+    <CheckBox
+        android:id="@+id/remember"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/password"
+        android:layout_marginLeft="20dp"
+        android:text="Remember me !"
+        android:layout_marginTop="10dp"/>
+    <TextView
+        android:textColor="#403e3e"
+        android:id="@+id/quenmk"
+        android:layout_below="@+id/password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Quên mật khẩu ?"
+        android:layout_marginLeft="250dp"
+        android:layout_marginTop="16dp"/>
+    <LinearLayout
+        android:id="@+id/ln1"
+        android:orientation="horizontal"
+        android:weightSum="10"
+        android:layout_below="@+id/quenmk"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:textColor="#fff"
+            android:id="@+id/dangnhap"
+            android:text="Đăng nhập"
+            android:background="#4bb994"
+            android:layout_weight="5"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_height="wrap_content" />
+        <Button
+            android:textColor="#fff"
+            android:id="@+id/huy"
+            android:text="Hủy"
+            android:background="#8c3636"
+            android:layout_weight="5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
-            <TabWidget
-                android:id="@android:id/tabs"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+    </LinearLayout>
 
-            <FrameLayout
-                android:id="@android:id/tabcontent"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-                <LinearLayout
-                    android:id="@+id/tab1"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
+    <RelativeLayout
+        android:layout_below="@+id/ln1"
+        android:layout_marginTop="25dp"
+        android:layout_centerHorizontal="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-                </LinearLayout>
-                <LinearLayout
-                    android:id="@+id/tab2"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
+        <Button
+            android:id="@+id/dangky"
+            android:background="#3aa936"
+            android:textColor="#fff"
+            android:layout_width="350dp"
+            android:text="Đăng ký"
+            android:layout_height="wrap_content"
+           android:layout_centerHorizontal="true"/>
 
-                </LinearLayout>
-            </FrameLayout>
-        </LinearLayout>
-    </TabHost>
+    </RelativeLayout>
+
 </RelativeLayout>
