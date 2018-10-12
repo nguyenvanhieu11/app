@@ -23,12 +23,12 @@
                 <item
                     android:id="@+id/historynote"
                     android:icon="@drawable/ic_note"
-                    android:title="Bài viết đã lưu" />
+                    android:title="Tin đã lưu"/>
 
                 <item
                     android:id="@+id/historysearch"
-                    android:icon="@drawable/search"
-                    android:title="Lịch sử tìm kiếm" />
+                    android:icon="@drawable/ic_user"
+                    android:title="Lịch sử hoạt động" />
             </group>
         </menu>
     </item>

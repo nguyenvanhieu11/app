@@ -5,6 +5,9 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.annotation.RequiresApi;
+import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ImageButton;
@@ -14,7 +17,7 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
-public class SanPham extends Index {
+public class SanPham extends AppCompatActivity {
 
     TabHost tabhost;
     ImageButton butonBack;
@@ -24,7 +27,6 @@ public class SanPham extends Index {
     HomeAdapter adapter;
 
 
-    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,7 +34,6 @@ public class SanPham extends Index {
 
 
         anhXa();
-        eventSearch();
         backActivity();
         khoitao();
         adapter = new HomeAdapter(this, R.layout.home, arrayList);
@@ -104,5 +105,10 @@ public class SanPham extends Index {
 
     }
 
-
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_prop, menu);
+        return true;
+    }
 }
