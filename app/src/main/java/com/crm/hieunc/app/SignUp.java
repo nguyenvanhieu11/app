@@ -1,4 +1,5 @@
 package com.crm.hieunc.app;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -10,9 +11,10 @@ import android.widget.ImageView;
 
 public class SignUp extends AppCompatActivity {
 
-    private EditText hoten,tendn,email,password,phone;
-    private Button btndk,btnhuy;
+    private EditText hoten, tendn, email, password, phone;
+    private Button btndk, btnhuy;
     private ImageView back;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,7 +25,7 @@ public class SignUp extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(SignUp.this,HomePage.class);
+                Intent intent = new Intent(SignUp.this, HomePage.class);
                 startActivity(intent);
             }
         });
@@ -31,23 +33,23 @@ public class SignUp extends AppCompatActivity {
         btnhuy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(SignUp.this,HomePage.class);
+                Intent intent = new Intent(SignUp.this, HomePage.class);
                 startActivity(intent);
             }
         });
     }
 
     private void anhxa() {
-        hoten = (EditText)findViewById(R.id.hoten);
-        tendn = (EditText)findViewById(R.id.tendn);
-        email = (EditText)findViewById(R.id.email);
-        password = (EditText)findViewById(R.id.password);
-        phone = (EditText)findViewById(R.id.sdt);
+        hoten = (EditText) findViewById(R.id.hoten);
+        tendn = (EditText) findViewById(R.id.tendn);
+        email = (EditText) findViewById(R.id.email);
+        password = (EditText) findViewById(R.id.password);
+        phone = (EditText) findViewById(R.id.sdt);
 
-        btndk = (Button)findViewById(R.id.btndk);
-        btnhuy = (Button)findViewById(R.id.btnhuy);
+        btndk = (Button) findViewById(R.id.btndk);
+        btnhuy = (Button) findViewById(R.id.btnhuy);
 
-        back = (ImageView)findViewById(R.id.backActivity);
+        back = (ImageView) findViewById(R.id.backActivity);
     }
 
 
