@@ -5,76 +5,50 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.annotation.RequiresApi;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.Adapter;
 import android.widget.AdapterView;
-import android.widget.ImageButton;
+import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.TabHost;
+import android.widget.Spinner;
 import android.widget.Toast;
+import android.support.v7.widget.Toolbar;
 
 import java.util.ArrayList;
 
 public class SanPham extends AppCompatActivity {
 
-    TabHost tabhost;
-    ImageButton butonBack;
 
     ListView lvHome;
     ArrayList<Home1> arrayList;
+    ArrayList<String> listaddres,listtime,listluong;
     HomeAdapter adapter;
 
+    Toolbar toolbar;
+    private Spinner address,time,luong;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_sanpham);
 
-
-        anhXa();
-        backActivity();
         khoitao();
         adapter = new HomeAdapter(this, R.layout.home, arrayList);
         lvHome.setAdapter(adapter);
 
-    }
+        search();
+        toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
 
-    private void anhXa() {
-        tabhost = (TabHost) findViewById(R.id.tabHost);
-        tabhost.setup();
+        ActionBar actionbar = getSupportActionBar();
+        actionbar.setDisplayHomeAsUpEnabled(true);
+        actionbar.setHomeAsUpIndicator(R.drawable.ic_aback);
 
-        TabHost.TabSpec tab1 = tabhost.newTabSpec("Tab01");
-        tab1.setIndicator("", getResources().getDrawable(R.drawable.home));
-        tab1.setContent(R.id.tab1);
-        tabhost.addTab(tab1);
-
-        TabHost.TabSpec tab2 = tabhost.newTabSpec("Tab02");
-        tab2.setIndicator("", getResources().getDrawable(R.drawable.address));
-        tab2.setContent(R.id.tab2);
-        tabhost.addTab(tab2);
-
-        TabHost.TabSpec tab3 = tabhost.newTabSpec("Tab03");
-        tab3.setIndicator("", getResources().getDrawable(R.drawable.setting));
-        tab3.setContent(R.id.tab3);
-        tabhost.addTab(tab3);
-
-        TabHost.TabSpec tab4 = tabhost.newTabSpec("Tab04");
-        tab4.setIndicator("", getResources().getDrawable(R.drawable.search));
-        tab4.setContent(R.id.tab4);
-        tabhost.addTab(tab4);
-    }
-
-    private void backActivity() {
-        butonBack = (ImageButton) findViewById(R.id.backActivity);
-        butonBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(SanPham.this, HomePage.class);
-                startActivity(intent);
-            }
-        });
     }
 
     private void khoitao() {
@@ -99,16 +73,37 @@ public class SanPham extends AppCompatActivity {
         lvHome.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Toast.makeText(SanPham.this,"hhihi",Toast.LENGTH_SHORT).show();
+                Toast.makeText(SanPham.this, "hhihi", Toast.LENGTH_SHORT).show();
             }
         });
-
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.menu_prop, menu);
+        getMenuInflater().inflate(R.menu.menu_item, menu);
+        MenuItem searchItem = menu.findItem(R.id.search);
         return true;
+    }
+
+    public void search(){
+
+        address = (Spinner)findViewById(R.id.address);
+        time = (Spinner)findViewById(R.id.time);
+        luong = (Spinner)findViewById(R.id.luong);
+
+        listaddres = new ArrayList<String>();
+        listaddres.add("Hà Nội");
+        listaddres.add("Huế");
+        listaddres.add("Nha Trang");
+        listaddres.add("Cần Sa");
+        listaddres.add("Vũng  tàu");
+        listaddres.add("Mộc Hoán");
+
+        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(SanPham.this,android.R.layout.simple_expandable_list_item_1,listaddres);
+        address.setAdapter(arrayAdapter);
+        time.setAdapter(arrayAdapter);
+        luong.setAdapter(arrayAdapter);
+
+
     }
 }

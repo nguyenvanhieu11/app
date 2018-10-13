@@ -6,7 +6,8 @@
         android:id="@+id/search"
         android:icon="@drawable/search"
         app:showAsAction="always"
-        android:title="timkiem" />
+        android:title="timkiem"
+        app:actionViewClass="android.support.v7.widget.SearchView"/>
     <item
         android:id="@+id/seting"
         android:icon="@drawable/setting"
