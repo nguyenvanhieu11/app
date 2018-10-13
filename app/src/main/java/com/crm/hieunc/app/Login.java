@@ -12,7 +12,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
-import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -40,7 +39,7 @@ public class Login extends Fragment {
         btndangnhap = (Button) view.findViewById(R.id.dangnhap);
         btnhuy = (Button) view.findViewById(R.id.huy);
         btndangky = (Button) view.findViewById(R.id.dangky);
-
+        quenmk = (TextView)view.findViewById(R.id.quenmk);
 
         sharedpreferences = this.getActivity().getSharedPreferences("datalogin", Context.MODE_PRIVATE);
 
@@ -92,6 +91,14 @@ public class Login extends Fragment {
             public void onClick(View view) {
                 Intent intent1 = new Intent(getActivity(),SignUp.class);
                 startActivity(intent1);
+            }
+        });
+
+        quenmk.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent quenmk = new Intent(getActivity(),Quen_MK.class);
+                startActivity(quenmk);
             }
         });
 

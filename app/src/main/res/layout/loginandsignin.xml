@@ -1,96 +1,123 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
     android:layout_marginTop="56dp">
 
-
-    <ImageView
-        android:id="@+id/user"
-        android:layout_marginTop="0dp"
-        android:layout_centerHorizontal="true"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:src="@drawable/user"/>
-
-    <EditText
-        android:layout_below="@+id/user"
-        android:layout_width="350dp"
-        android:hint="UserName"
-        android:id="@+id/username"
-        android:layout_centerHorizontal="true"
-        android:layout_height="wrap_content" />
-    <EditText
-        android:layout_below="@+id/username"
-        android:layout_width="350dp"
-        android:hint="PassWord"
-        android:layout_marginTop="25dp"
-        android:id="@+id/password"
-        android:layout_centerHorizontal="true"
-        android:inputType="textPassword"
-        android:layout_height="wrap_content" />
-    <CheckBox
-        android:id="@+id/remember"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/password"
-        android:layout_marginLeft="20dp"
-        android:text="Remember me !"
-        android:layout_marginTop="10dp"/>
-    <TextView
-        android:textColor="#403e3e"
-        android:id="@+id/quenmk"
-        android:layout_below="@+id/password"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Quên mật khẩu ?"
-        android:layout_marginLeft="250dp"
-        android:layout_marginTop="16dp"/>
-    <LinearLayout
-        android:id="@+id/ln1"
-        android:orientation="horizontal"
-        android:weightSum="10"
-        android:layout_below="@+id/quenmk"
-        android:layout_marginTop="20dp"
-        android:layout_centerHorizontal="true"
-        android:layout_width="350dp"
-        android:layout_height="wrap_content">
-
-        <Button
-            android:textColor="#fff"
-            android:id="@+id/dangnhap"
-            android:text="Đăng nhập"
-            android:background="#4bb994"
-            android:layout_weight="5"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-        <Button
-            android:textColor="#fff"
-            android:id="@+id/huy"
-            android:text="Hủy"
-            android:background="#8c3636"
-            android:layout_weight="5"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
-    </LinearLayout>
-
     <RelativeLayout
-        android:layout_below="@+id/ln1"
-        android:layout_marginTop="25dp"
-        android:layout_centerHorizontal="true"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
 
-        <Button
-            android:id="@+id/dangky"
-            android:background="#3aa936"
-            android:textColor="#fff"
-            android:layout_width="350dp"
-            android:text="Đăng ký"
+        <ImageView
+            android:id="@+id/user"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="0dp"
+            android:src="@drawable/user" />
+        <TextView
+            android:id="@+id/txt"
+            android:textColor="#29b9e8"
+            android:text="Đăng Nhập"
+            android:layout_below="@+id/user"
+            android:textSize="30dp"
+            android:layout_centerHorizontal="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/username"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-           android:layout_centerHorizontal="true"/>
+            android:layout_below="@+id/txt"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:hint="UserName" />
+
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/username"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="25dp"
+            android:hint="PassWord"
+            android:inputType="textPassword" />
+
+        <CheckBox
+            android:id="@+id/remember"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/password"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:text="Remember me !" />
+
+        <TextView
+            android:id="@+id/quenmk"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/password"
+            android:layout_marginTop="16dp"
+            android:text="Quên mật khẩu ?"
+            android:textColor="#403e3e" />
+
+        <LinearLayout
+            android:id="@+id/ln1"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/quenmk"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            android:weightSum="10">
+
+            <Button
+                android:id="@+id/dangnhap"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="5"
+                android:background="#29bae9"
+                android:text="Đăng nhập"
+                android:textColor="#fff" />
+
+            <Button
+                android:id="@+id/huy"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="5"
+                android:background="#c25c5c"
+                android:text="Hủy"
+                android:textColor="#fff" />
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ln1"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="25dp">
+
+            <Button
+                android:id="@+id/dangky"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:background="#3aa936"
+                android:text="Đăng ký"
+                android:textColor="#fff" />
+
+        </RelativeLayout>
 
     </RelativeLayout>
-
-</RelativeLayout>
+</ScrollView>
