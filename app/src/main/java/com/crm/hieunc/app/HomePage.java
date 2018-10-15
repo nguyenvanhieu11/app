@@ -31,7 +31,7 @@ public class HomePage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.pagerhome);
 
-        btndangtin = (Button)findViewById(R.id.btndangbai);
+        btndangtin = (Button) findViewById(R.id.btndangbai);
 
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -135,11 +135,4 @@ public class HomePage extends AppCompatActivity {
         return true;
     }
 
-
-    public boolean onDown(MotionEvent event){
-
-        btndangtin.setVisibility(View.INVISIBLE);
-
-        return true;
-    }
 }

@@ -25,16 +25,14 @@ public class SignUp extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(SignUp.this, HomePage.class);
-                startActivity(intent);
+                onBackPressed();
             }
         });
 
         btnhuy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(SignUp.this, HomePage.class);
-                startActivity(intent);
+                onBackPressed();
             }
         });
     }
@@ -51,6 +49,4 @@ public class SignUp extends AppCompatActivity {
 
         back = (ImageView) findViewById(R.id.backActivity);
     }
-
-
 }
