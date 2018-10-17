@@ -23,7 +23,7 @@ public class Login extends Fragment {
     EditText username, password;
     Button btndangnhap, btnhuy, btndangky;
     CheckBox remember;
-    TextView quenmk;
+    TextView quenmatkhau;
 
     SharedPreferences sharedpreferences;
 
@@ -39,7 +39,7 @@ public class Login extends Fragment {
         btndangnhap = (Button) view.findViewById(R.id.dangnhap);
         btnhuy = (Button) view.findViewById(R.id.huy);
         btndangky = (Button) view.findViewById(R.id.dangky);
-        quenmk = (TextView)view.findViewById(R.id.quenmk);
+        quenmatkhau = (TextView)view.findViewById(R.id.quenmk);
 
         sharedpreferences = this.getActivity().getSharedPreferences("datalogin", Context.MODE_PRIVATE);
 
@@ -94,7 +94,7 @@ public class Login extends Fragment {
             }
         });
 
-        quenmk.setOnClickListener(new View.OnClickListener() {
+        quenmatkhau.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent quenmk = new Intent(getActivity(),Quen_MK.class);

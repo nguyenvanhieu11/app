@@ -6,12 +6,16 @@
     android:padding="10dp">
 
     <LinearLayout
+
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:padding="10dp">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:clipToPadding="false"
             android:gravity="center"
             android:orientation="horizontal">
 
@@ -19,6 +23,7 @@
                 android:id="@+id/cardviewone"
                 android:layout_width="160dp"
                 android:layout_height="180dp"
+                android:layout_margin="10dp"
                 android:clickable="true"
                 android:foreground="?android:attr/selectableItemBackground">
 
@@ -31,6 +36,7 @@
                     <ImageView
                         android:layout_width="65dp"
                         android:layout_height="65dp"
+                        android:layout_marginTop="20dp"
                         android:background="@drawable/khung1"
                         android:padding="10dp"
                         android:src="@drawable/ic_lock" />
@@ -60,6 +66,7 @@
                 android:id="@+id/cardviewtow"
                 android:layout_width="160dp"
                 android:layout_height="180dp"
+                android:layout_margin="10dp"
                 android:clickable="true"
                 android:foreground="?android:attr/selectableItemBackground">
 
@@ -70,6 +77,7 @@
                     android:orientation="vertical">
 
                     <ImageView
+                        android:layout_marginTop="20dp"
                         android:layout_width="65dp"
                         android:layout_height="65dp"
                         android:background="@drawable/khung2"
@@ -97,9 +105,11 @@
                 </LinearLayout>
             </android.support.v7.widget.CardView>
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:clipToPadding="false"
             android:gravity="center"
             android:orientation="horizontal">
 
@@ -107,6 +117,7 @@
                 android:id="@+id/cardviewthree"
                 android:layout_width="160dp"
                 android:layout_height="180dp"
+                android:layout_margin="10dp"
                 android:clickable="true"
                 android:foreground="?android:attr/selectableItemBackground">
 
@@ -117,6 +128,7 @@
                     android:orientation="vertical">
 
                     <ImageView
+                        android:layout_marginTop="20dp"
                         android:layout_width="65dp"
                         android:layout_height="65dp"
                         android:background="@drawable/khung3"
@@ -148,6 +160,7 @@
                 android:id="@+id/cardviewfour"
                 android:layout_width="160dp"
                 android:layout_height="180dp"
+                android:layout_margin="10dp"
                 android:clickable="true"
                 android:foreground="?android:attr/selectableItemBackground">
 
@@ -158,6 +171,7 @@
                     android:orientation="vertical">
 
                     <ImageView
+                        android:layout_marginTop="20dp"
                         android:layout_width="65dp"
                         android:layout_height="65dp"
                         android:background="@drawable/khung4"
@@ -185,16 +199,19 @@
                 </LinearLayout>
             </android.support.v7.widget.CardView>
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:clipToPadding="false"
             android:gravity="center"
             android:orientation="horizontal">
 
             <android.support.v7.widget.CardView
                 android:id="@+id/cardviewfine"
-                android:layout_width="320dp"
+                android:layout_width="340dp"
                 android:layout_height="180dp"
+                android:layout_margin="10dp"
                 android:clickable="true"
                 android:foreground="?android:attr/selectableItemBackground">
 
@@ -205,6 +222,7 @@
                     android:orientation="vertical">
 
                     <ImageView
+                        android:layout_marginTop="20dp"
                         android:layout_width="65dp"
                         android:layout_height="65dp"
                         android:background="@drawable/khung5"
