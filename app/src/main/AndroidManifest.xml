@@ -20,5 +20,6 @@
         <activity android:name=".SanPham"></activity>
         <activity android:name=".HomePage"></activity>
         <activity android:name=".SignUp"></activity>
+        <activity android:name=".Quen_MK"></activity>
     </application>
 </manifest>

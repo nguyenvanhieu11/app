@@ -9,7 +9,7 @@
         android:layout_width="127dp"
         android:layout_height="127dp" />
     <TextView
-        android:textColor="#000"
+        android:textColor="#d30615f2"
         android:id="@+id/namecustom"
         android:textSize="18sp"
         android:text="ten danh muc san phan"
