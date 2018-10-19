@@ -6,13 +6,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
 
 public class SignUp extends AppCompatActivity {
 
     private EditText hoten, tendn, email, password, phone;
     private Button btndk, btnhuy;
-    private ImageView back;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
