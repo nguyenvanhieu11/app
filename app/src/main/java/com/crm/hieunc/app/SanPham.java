@@ -14,6 +14,7 @@ import android.view.View;
 import android.widget.Adapter;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -26,11 +27,12 @@ public class SanPham extends AppCompatActivity {
 
     ListView lvHome;
     ArrayList<Home1> arrayList;
-    ArrayList<String> listaddres,listtime,listluong;
+    ArrayList<String> listaddres, listtime, listluong;
     HomeAdapter adapter;
 
     Toolbar toolbar;
-    private Spinner address,time,luong;
+    private Spinner address, time, luong;
+    private Button dangbai;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -49,26 +51,27 @@ public class SanPham extends AppCompatActivity {
         actionbar.setDisplayHomeAsUpEnabled(true);
         actionbar.setHomeAsUpIndicator(R.drawable.ic_aback);
 
+        dangbai();
     }
 
     private void khoitao() {
         lvHome = (ListView) findViewById(R.id.listItem);
         arrayList = new ArrayList<>();
-        arrayList.add(new Home1("laptop macbooks 2018", "Ha Noi", R.drawable.anh1, "32.000.000", "còn hàng"));
-        arrayList.add(new Home1("laptop macbooks 2011", "Ha Noi", R.drawable.anh2, "32.000.000", "còn hàng"));
-        arrayList.add(new Home1("laptop macbooks 2013", "Ha Noi", R.drawable.anh3, "32.000.000", "còn hàng"));
-        arrayList.add(new Home1("laptop macbooks 2012", "Ha Noi", R.drawable.anh4, "32.000.000", "còn hàng"));
-        arrayList.add(new Home1("laptop macbooks 2015", "Ha Noi", R.drawable.anh5, "32.000.000", "còn hàng"));
-        arrayList.add(new Home1("laptop macbooks 2016", "Ha Noi", R.drawable.anh6, "32.000.000", "còn hàng"));
+        arrayList.add(new Home1("laptop macbooks 2018", "Ha Noi", R.drawable.xeco, "32.000.000", "còn hàng"));
+        arrayList.add(new Home1("laptop macbooks 2011", "Ha Noi", R.drawable.xeco, "32.000.000", "còn hàng"));
+        arrayList.add(new Home1("laptop macbooks 2013", "Ha Noi", R.drawable.xeco, "32.000.000", "còn hàng"));
+        arrayList.add(new Home1("laptop macbooks 2012", "Ha Noi", R.drawable.xeco, "32.000.000", "còn hàng"));
+        arrayList.add(new Home1("laptop macbooks 2015", "Ha Noi", R.drawable.xeco, "32.000.000", "còn hàng"));
+        arrayList.add(new Home1("laptop macbooks 2016", "Ha Noi", R.drawable.xeco, "32.000.000", "còn hàng"));
         arrayList.add(new Home1("laptop macbooks 2007", "Ha Noi", R.drawable.thucung, "32.000.000", "còn hàng"));
-        arrayList.add(new Home1("laptop macbooks 2008", "Ha Noi", R.drawable.giadung, "32.000.000", "còn hàng"));
-        arrayList.add(new Home1("laptop macbooks 2010", "Ha Noi", R.drawable.me_be, "32.000.000", "còn hàng"));
-        arrayList.add(new Home1("laptop macbooks 2010", "Ha Noi", R.drawable.me_be, "32.000.000", "còn hàng"));
-        arrayList.add(new Home1("laptop macbooks 2010", "Ha Noi", R.drawable.me_be, "32.000.000", "còn hàng"));
-        arrayList.add(new Home1("laptop macbooks 2010", "Ha Noi", R.drawable.me_be, "32.000.000", "còn hàng"));
-        arrayList.add(new Home1("laptop macbooks 2010", "Ha Noi", R.drawable.me_be, "32.000.000", "còn hàng"));
-        arrayList.add(new Home1("laptop macbooks 2010", "Ha Noi", R.drawable.me_be, "32.000.000", "còn hàng"));
-        arrayList.add(new Home1("laptop macbooks 2010", "Ha Noi", R.drawable.me_be, "32.000.000", "còn hàng"));
+        arrayList.add(new Home1("laptop macbooks 2008", "Ha Noi", R.drawable.xeco, "32.000.000", "còn hàng"));
+        arrayList.add(new Home1("laptop macbooks 2010", "Ha Noi", R.drawable.xeco, "32.000.000", "còn hàng"));
+        arrayList.add(new Home1("laptop macbooks 2010", "Ha Noi", R.drawable.xeco, "32.000.000", "còn hàng"));
+        arrayList.add(new Home1("laptop macbooks 2010", "Ha Noi", R.drawable.xeco, "32.000.000", "còn hàng"));
+        arrayList.add(new Home1("laptop macbooks 2010", "Ha Noi", R.drawable.xeco, "32.000.000", "còn hàng"));
+        arrayList.add(new Home1("laptop macbooks 2010", "Ha Noi", R.drawable.xeco, "32.000.000", "còn hàng"));
+        arrayList.add(new Home1("laptop macbooks 2010", "Ha Noi", R.drawable.xeco, "32.000.000", "còn hàng"));
+        arrayList.add(new Home1("laptop macbooks 2010", "Ha Noi", R.drawable.xeco, "32.000.000", "còn hàng"));
 
         lvHome.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -85,11 +88,11 @@ public class SanPham extends AppCompatActivity {
         return true;
     }
 
-    public void search(){
+    public void search() {
 
-        address = (Spinner)findViewById(R.id.address);
-        time = (Spinner)findViewById(R.id.time);
-        luong = (Spinner)findViewById(R.id.luong);
+        address = (Spinner) findViewById(R.id.address);
+        time = (Spinner) findViewById(R.id.time);
+        luong = (Spinner) findViewById(R.id.luong);
 
         listaddres = new ArrayList<String>();
         listaddres.add("Hà Nội");
@@ -99,11 +102,20 @@ public class SanPham extends AppCompatActivity {
         listaddres.add("Vũng  tàu");
         listaddres.add("Mộc Hoán");
 
-        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(SanPham.this,android.R.layout.simple_expandable_list_item_1,listaddres);
+        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(SanPham.this, android.R.layout.simple_expandable_list_item_1, listaddres);
         address.setAdapter(arrayAdapter);
         time.setAdapter(arrayAdapter);
         luong.setAdapter(arrayAdapter);
+    }
 
-
+    public void dangbai() {
+        dangbai = (Button) findViewById(R.id.dangbai);
+        dangbai.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent dang = new Intent(SanPham.this, Dang_bai.class);
+                startActivity(dang);
+            }
+        });
     }
 }
