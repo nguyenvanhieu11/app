@@ -3,14 +3,12 @@ package com.crm.hieunc.app;
 public class Home1 {
     private String Ten;
     private String DiaChi;
-    private int Hinh;
     private String Gia;
     private String TinhTrang;
 
-    public Home1(String ten, String diaChi, int hinh, String gia, String tinhTrang) {
+    public Home1(String ten, String diaChi, String gia, String tinhTrang) {
         Ten = ten;
         DiaChi = diaChi;
-        Hinh = hinh;
         Gia = gia;
         TinhTrang = tinhTrang;
     }
@@ -29,14 +27,6 @@ public class Home1 {
 
     public void setDiaChi(String diaChi) {
         DiaChi = diaChi;
-    }
-
-    public int getHinh() {
-        return Hinh;
-    }
-
-    public void setHinh(int hinh) {
-        Hinh = hinh;
     }
 
     public String getGia() {
