@@ -42,10 +42,11 @@
                         android:src="@drawable/ic_lock" />
 
                     <TextView
+                        android:gravity="center"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
-                        android:text="Nguyen Van Hieu"
+                        android:text="Lao động phổ thông"
                         android:textStyle="bold" />
 
                     <View
@@ -88,7 +89,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
-                        android:text="Nguyen Van Hieu"
+                        android:text="Công việc làm quản lý"
                         android:textStyle="bold" />
 
                     <View
@@ -139,7 +140,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
-                        android:text="Nguyen Van Hieu"
+                        android:text="Sinh viên / Bán thời gian"
                         android:textStyle="bold" />
 
                     <View
@@ -182,7 +183,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
-                        android:text="Nguyen Van Hieu"
+                        android:text="Việc làm chuyên môn"
                         android:textStyle="bold" />
 
                     <View
@@ -233,7 +234,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
-                        android:text="Nguyen Van Hieu"
+                        android:text="Nhà tuyển dụng"
                         android:textStyle="bold" />
 
                     <View
