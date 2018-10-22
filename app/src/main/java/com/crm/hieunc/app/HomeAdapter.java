@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.List;
 
@@ -50,8 +51,6 @@ public class HomeAdapter extends BaseAdapter {
         TextView address = (TextView)view.findViewById(R.id.Address);
         TextView gia = (TextView)view.findViewById(R.id.giaban);
         TextView tinhtrang = (TextView)view.findViewById(R.id.tinhtrang);
-        ImageView hinhanh = (ImageView)view.findViewById(R.id.imgViewproduct);
-
 
         Home1 home1 = home1List.get(i);
 
@@ -59,8 +58,8 @@ public class HomeAdapter extends BaseAdapter {
         address.setText(home1.getDiaChi());
         gia.setText(home1.getGia());
         tinhtrang.setText(home1.getTinhTrang());
-        hinhanh.setImageResource(home1.getHinh());
 
         return view;
     }
+
 }

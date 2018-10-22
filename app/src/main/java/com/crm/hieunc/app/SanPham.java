@@ -1,5 +1,6 @@
 package com.crm.hieunc.app;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
@@ -17,6 +18,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 import android.support.v7.widget.Toolbar;
 
@@ -29,6 +31,8 @@ public class SanPham extends AppCompatActivity {
     ArrayList<Home1> arrayList;
     ArrayList<String> listaddres, listtime, listluong;
     HomeAdapter adapter;
+
+    Dialog myDialog;
 
     Toolbar toolbar;
     private Spinner address, time, luong;
@@ -57,26 +61,32 @@ public class SanPham extends AppCompatActivity {
     private void khoitao() {
         lvHome = (ListView) findViewById(R.id.listItem);
         arrayList = new ArrayList<>();
-        arrayList.add(new Home1("laptop macbooks 2018", "Ha Noi", R.drawable.xeco, "32.000.000", "còn hàng"));
-        arrayList.add(new Home1("laptop macbooks 2011", "Ha Noi", R.drawable.xeco, "32.000.000", "còn hàng"));
-        arrayList.add(new Home1("laptop macbooks 2013", "Ha Noi", R.drawable.xeco, "32.000.000", "còn hàng"));
-        arrayList.add(new Home1("laptop macbooks 2012", "Ha Noi", R.drawable.xeco, "32.000.000", "còn hàng"));
-        arrayList.add(new Home1("laptop macbooks 2015", "Ha Noi", R.drawable.xeco, "32.000.000", "còn hàng"));
-        arrayList.add(new Home1("laptop macbooks 2016", "Ha Noi", R.drawable.xeco, "32.000.000", "còn hàng"));
-        arrayList.add(new Home1("laptop macbooks 2007", "Ha Noi", R.drawable.thucung, "32.000.000", "còn hàng"));
-        arrayList.add(new Home1("laptop macbooks 2008", "Ha Noi", R.drawable.xeco, "32.000.000", "còn hàng"));
-        arrayList.add(new Home1("laptop macbooks 2010", "Ha Noi", R.drawable.xeco, "32.000.000", "còn hàng"));
-        arrayList.add(new Home1("laptop macbooks 2010", "Ha Noi", R.drawable.xeco, "32.000.000", "còn hàng"));
-        arrayList.add(new Home1("laptop macbooks 2010", "Ha Noi", R.drawable.xeco, "32.000.000", "còn hàng"));
-        arrayList.add(new Home1("laptop macbooks 2010", "Ha Noi", R.drawable.xeco, "32.000.000", "còn hàng"));
-        arrayList.add(new Home1("laptop macbooks 2010", "Ha Noi", R.drawable.xeco, "32.000.000", "còn hàng"));
-        arrayList.add(new Home1("laptop macbooks 2010", "Ha Noi", R.drawable.xeco, "32.000.000", "còn hàng"));
-        arrayList.add(new Home1("laptop macbooks 2010", "Ha Noi", R.drawable.xeco, "32.000.000", "còn hàng"));
+        arrayList.add(new Home1("laptop macbooks 2018", "Ha Noi", "32.000.000", "còn hàng"));
+        arrayList.add(new Home1("laptop macbooks 2011", "Ha Noi", "32.000.000", "còn hàng"));
+        arrayList.add(new Home1("laptop macbooks 2013", "Ha Noi", "32.000.000", "còn hàng"));
+        arrayList.add(new Home1("laptop macbooks 2012", "Ha Noi", "32.000.000", "còn hàng"));
+        arrayList.add(new Home1("laptop macbooks 2015", "Ha Noi", "32.000.000", "còn hàng"));
+        arrayList.add(new Home1("laptop macbooks 2016", "Ha Noi", "32.000.000", "còn hàng"));
+        arrayList.add(new Home1("laptop macbooks 2007", "Ha Noi", "32.000.000", "còn hàng"));
+        arrayList.add(new Home1("laptop macbooks 2008", "Ha Noi", "32.000.000", "còn hàng"));
+        arrayList.add(new Home1("laptop macbooks 2010", "Ha Noi", "32.000.000", "còn hàng"));
+        arrayList.add(new Home1("laptop macbooks 2010", "Ha Noi", "32.000.000", "còn hàng"));
+        arrayList.add(new Home1("laptop macbooks 2010", "Ha Noi", "32.000.000", "còn hàng"));
+        arrayList.add(new Home1("laptop macbooks 2010", "Ha Noi", "32.000.000", "còn hàng"));
+        arrayList.add(new Home1("laptop macbooks 2010", "Ha Noi", "32.000.000", "còn hàng"));
+        arrayList.add(new Home1("laptop macbooks 2010", "Ha Noi", "32.000.000", "còn hàng"));
+        arrayList.add(new Home1("laptop macbooks 2010", "Ha Noi", "32.000.000", "còn hàng"));
 
         lvHome.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Toast.makeText(SanPham.this, "hhihi", Toast.LENGTH_SHORT).show();
+                showDialog();
+            }
+        });
+        lvHome.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
+                return false;
             }
         });
     }
@@ -117,5 +127,18 @@ public class SanPham extends AppCompatActivity {
                 startActivity(dang);
             }
         });
+    }
+
+    public void showDialog(){
+        TextView txtClose;
+        txtClose = (TextView)myDialog.findViewById(R.id.close);
+        myDialog.setContentView(R.layout.dialogshow);
+        txtClose.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                myDialog.dismiss();
+            }
+        });
+        myDialog.show();
     }
 }
