@@ -21,5 +21,6 @@
         <activity android:name=".HomePage"></activity>
         <activity android:name=".SignUp"></activity>
         <activity android:name=".Quen_MK"></activity>
+        <activity android:name=".Dang_bai"></activity>
     </application>
 </manifest>
