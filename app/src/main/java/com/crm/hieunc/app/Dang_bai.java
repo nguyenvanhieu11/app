@@ -34,12 +34,12 @@ public class Dang_bai extends AppCompatActivity {
     }
 
     public void tuyendung() {
-//        tuyendung = (Spinner) findViewById(R.id.tuyendung);
-//        list = new ArrayList<>();
-//        list.add("Tuyển dụng doanh nghiệp");
-//        list.add("Tuyển dụng tư nhân");
-//
-//        ArrayAdapter<String> adapter = new ArrayAdapter<String>(Dang_bai.this, android.R.layout.simple_expandable_list_item_1, list);
-//        tuyendung.setAdapter(adapter);
+        tuyendung = (Spinner) findViewById(R.id.hinhthuc);
+        list = new ArrayList<>();
+        list.add("Tuyển dụng doanh nghiệp");
+        list.add("Tuyển dụng tư nhân");
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(Dang_bai.this, android.R.layout.simple_expandable_list_item_1, list);
+        tuyendung.setAdapter(adapter);
     }
 }

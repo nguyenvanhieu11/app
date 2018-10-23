@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@drawable/custom_dangbai">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -19,43 +20,47 @@
     </RelativeLayout>
 
     <LinearLayout
+        android:layout_marginTop="56dp"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:layout_gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:layout_marginTop="0dp"
             app:srcCompat="@drawable/index" />
 
         <TextView
-            android:tooltipText="fsdfd"
+            android:textColor="#fff"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Tuyển dụng nhanh - Tìm việc dễ dàng"
+            android:textSize="20dp"
             android:textStyle="italic"
-            android:layout_gravity="center"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Tuyển dụng nhanh"
-            android:textSize="20dp"/>
+            android:tooltipText="fsdfd" />
+
         <TextView
-            android:layout_gravity="center"
+            android:textColor="#fff"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:text="Tìm việc dễ dàng"
-            android:textSize="20dp"/>
-
-        <TextView
-            android:id="@+id/next"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginRight="20dp"
-            android:layout_marginBottom="25dp"
-            android:text="tiếp theo "
             android:textSize="20dp" />
-
-
     </LinearLayout>
-</LinearLayout>
+    <RelativeLayout
+        android:background="#ccc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Spinner
+            android:id="@+id/hinhthuc"
+            android:background="@drawable/custom_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </Spinner>
+    </RelativeLayout>
+</android.support.constraint.ConstraintLayout>

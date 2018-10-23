@@ -43,6 +43,7 @@ public class SanPham extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_sanpham);
 
+//        myDialog = new Dialog(this);
         khoitao();
         adapter = new HomeAdapter(this, R.layout.home, arrayList);
         lvHome.setAdapter(adapter);
@@ -131,8 +132,8 @@ public class SanPham extends AppCompatActivity {
 
     public void showDialog(){
         TextView txtClose;
-        txtClose = (TextView)myDialog.findViewById(R.id.close);
         myDialog.setContentView(R.layout.dialogshow);
+        txtClose = (TextView)myDialog.findViewById(R.id.close);
         txtClose.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

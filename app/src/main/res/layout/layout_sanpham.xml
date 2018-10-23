@@ -64,7 +64,7 @@
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="10dp"
-            android:background="#427b91"
+            android:background="@drawable/custom_btndangbai"
             android:drawableLeft="@drawable/ic_camera_alt_black_24dp"
             android:padding="15dp"
             android:text=" Đăng bài tuyển dụng"
