@@ -18,9 +18,6 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-//    ProgressBar load;
-//    int a = 10;
-
     Spinner spinner;
     ArrayList<String> list;
 
@@ -29,9 +26,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        requestWindowFeature(Window.FEATURE_NO_TITLE);
-//        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
-//                WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
 
         spinner = (Spinner) findViewById(R.id.spinner);
@@ -43,23 +37,6 @@ public class MainActivity extends AppCompatActivity {
         ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_expandable_list_item_1, list);
         adapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
         spinner.setAdapter(adapter);
-
-//        load = (ProgressBar)findViewById(R.id.pbLoad);
-//        CountDownTimer Timer = new CountDownTimer(3000, 500) {
-//            public void onTick(long millisUntilFinished) {
-//
-//                a += 20;
-//                load.setProgress(a);
-//
-//            }
-//
-//            public void onFinish() {
-//
-//                Intent intent = new Intent(MainActivity.this,HomePage.class);
-//                startActivity(intent);
-////                Toast.makeText(MainActivity.this, "xong", Toast.LENGTH_SHORT).show();
-//            }
-//        }.start();
         selectItem();
     }
 
@@ -72,14 +49,14 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View view) {
                         String text = adapterView.getItemAtPosition(i).toString();
-                        switch (text){
+                        switch (text) {
                             case "Miền Bắc":
-                                Intent intent = new Intent(MainActivity.this,HomePage.class);
+                                Intent intent = new Intent(MainActivity.this, HomePage.class);
                                 startActivity(intent);
 //                                Toast.makeText(MainActivity.this,text,Toast.LENGTH_SHORT).show();
                                 break;
                             case "Miền Nam":
-                                Intent intent1 = new Intent(MainActivity.this,HomePage.class);
+                                Intent intent1 = new Intent(MainActivity.this, HomePage.class);
                                 startActivity(intent1);
 //                                Toast.makeText(MainActivity.this,text,Toast.LENGTH_SHORT).show();
                                 break;
@@ -91,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
-                Toast.makeText(MainActivity.this,"no thing Selected",Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, "no thing Selected", Toast.LENGTH_SHORT).show();
             }
         });
 

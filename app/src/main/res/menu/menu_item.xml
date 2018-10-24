@@ -5,16 +5,14 @@
     <item
         android:id="@+id/search"
         android:icon="@drawable/ic_search_black_24dp"
-        app:showAsAction="always"
         android:title="timkiem"
-        app:actionViewClass="android.support.v7.widget.SearchView"/>
+        app:actionViewClass="android.support.v7.widget.SearchView"
+        app:showAsAction="always" />
     <item
         android:id="@+id/seting"
-        android:icon="@drawable/setting"
         android:title="timkiem" />
     <item
         android:id="@+id/demo"
-        android:icon="@drawable/home"
         android:title="timkiem" />
 
 </menu>

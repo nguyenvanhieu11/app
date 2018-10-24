@@ -38,19 +38,15 @@ public class HomeAdapter extends BaseAdapter {
         return 0;
     }
 
-//    public class ViewHolder{
-//        ImageView
-//    }
-
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        view = inflater.inflate(layout,null);
+        view = inflater.inflate(layout, null);
 
-        TextView ten = (TextView)view.findViewById(R.id.nameProduct);
-        TextView address = (TextView)view.findViewById(R.id.Address);
-        TextView gia = (TextView)view.findViewById(R.id.giaban);
-        TextView tinhtrang = (TextView)view.findViewById(R.id.tinhtrang);
+        TextView ten = (TextView) view.findViewById(R.id.nameProduct);
+        TextView address = (TextView) view.findViewById(R.id.Address);
+        TextView gia = (TextView) view.findViewById(R.id.giaban);
+        TextView tinhtrang = (TextView) view.findViewById(R.id.tinhtrang);
 
         Home1 home1 = home1List.get(i);
 

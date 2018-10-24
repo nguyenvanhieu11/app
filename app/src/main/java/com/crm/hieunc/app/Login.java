@@ -39,13 +39,13 @@ public class Login extends Fragment {
         btndangnhap = (Button) view.findViewById(R.id.dangnhap);
         btnhuy = (Button) view.findViewById(R.id.huy);
         btndangky = (Button) view.findViewById(R.id.dangky);
-        quenmatkhau = (TextView)view.findViewById(R.id.quenmk);
+        quenmatkhau = (TextView) view.findViewById(R.id.quenmk);
 
         sharedpreferences = this.getActivity().getSharedPreferences("datalogin", Context.MODE_PRIVATE);
 
-        username.setText(sharedpreferences.getString("username",""));
-        password.setText(sharedpreferences.getString("password",""));
-        remember.setChecked(sharedpreferences.getBoolean("checked",false));
+        username.setText(sharedpreferences.getString("username", ""));
+        password.setText(sharedpreferences.getString("password", ""));
+        remember.setChecked(sharedpreferences.getBoolean("checked", false));
 
         btndangnhap.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,13 +57,13 @@ public class Login extends Fragment {
                     Toast.makeText(getActivity(), "Bạn cần điền đầy đủ thông tin !", LENGTH_LONG).show();
                 } else if (user.equals("hieunv") && pass.equals("hieu31071998")) {
 
-                    if(remember.isChecked()){
+                    if (remember.isChecked()) {
                         SharedPreferences.Editor editor = sharedpreferences.edit();
-                        editor.putString("username",user);
-                        editor.putString("password",pass);
-                        editor.putBoolean("checked",true);
+                        editor.putString("username", user);
+                        editor.putString("password", pass);
+                        editor.putBoolean("checked", true);
                         editor.commit();
-                    }else{
+                    } else {
                         SharedPreferences.Editor editor = sharedpreferences.edit();
                         editor.remove("username");
                         editor.remove("password");
@@ -71,7 +71,7 @@ public class Login extends Fragment {
                         editor.commit();
                     }
 
-                    Toast.makeText(getActivity(),"Đăng nhập thành công",Toast.LENGTH_LONG).show();
+                    Toast.makeText(getActivity(), "Đăng nhập thành công", Toast.LENGTH_LONG).show();
                 } else {
                     Toast.makeText(getActivity(), "Sai tên đăng nhập mật khẩu !", LENGTH_LONG).show();
                 }
@@ -81,7 +81,7 @@ public class Login extends Fragment {
         btnhuy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getActivity(),HomePage.class);
+                Intent intent = new Intent(getActivity(), HomePage.class);
                 startActivity(intent);
             }
         });
@@ -89,7 +89,7 @@ public class Login extends Fragment {
         btndangky.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent1 = new Intent(getActivity(),SignUp.class);
+                Intent intent1 = new Intent(getActivity(), SignUp.class);
                 startActivity(intent1);
             }
         });
@@ -97,7 +97,7 @@ public class Login extends Fragment {
         quenmatkhau.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent quenmk = new Intent(getActivity(),Quen_MK.class);
+                Intent quenmk = new Intent(getActivity(), Quen_MK.class);
                 startActivity(quenmk);
             }
         });

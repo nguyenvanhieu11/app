@@ -10,7 +10,6 @@ import android.support.v7.widget.Toolbar;
 
 public class Quen_MK extends AppCompatActivity {
 
-
     Toolbar toolbar;
 
     @Override

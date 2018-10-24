@@ -26,7 +26,6 @@ import java.util.ArrayList;
 
 public class SanPham extends AppCompatActivity {
 
-
     ListView lvHome;
     ArrayList<Home1> arrayList;
     ArrayList<String> listaddres, listtime, listluong;
@@ -129,9 +128,9 @@ public class SanPham extends AppCompatActivity {
         });
     }
 
-    public void showDialog(){
+    public void showDialog() {
         TextView txtClose;
-        txtClose = (TextView)myDialog.findViewById(R.id.close);
+        txtClose = (TextView) myDialog.findViewById(R.id.close);
         myDialog.setContentView(R.layout.dialogshow);
         txtClose.setOnClickListener(new View.OnClickListener() {
             @Override

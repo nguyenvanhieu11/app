@@ -14,7 +14,7 @@ public class HinhAnhAdapter extends BaseAdapter {
 
     private Context context;
     private int layout;
-    private List<HinhAnh>hinhAnhList;
+    private List<HinhAnh> hinhAnhList;
 
     public HinhAnhAdapter(Context context, int layout, List<HinhAnh> hinhAnhList) {
         this.context = context;
@@ -37,22 +37,23 @@ public class HinhAnhAdapter extends BaseAdapter {
         return 0;
     }
 
-    private class ViewHolder{
+    private class ViewHolder {
         ImageView imgHinh;
         TextView txtTen;
     }
+
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
         ViewHolder holder;
-        if(view == null){
+        if (view == null) {
             holder = new ViewHolder();
-            LayoutInflater inflater  = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            view = inflater.inflate(layout,null);
+            LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            view = inflater.inflate(layout, null);
 
-            holder.txtTen = (TextView)view.findViewById(R.id.namecustom);
-            holder.imgHinh = (ImageView)view.findViewById(R.id.imageView);
+            holder.txtTen = (TextView) view.findViewById(R.id.namecustom);
+            holder.imgHinh = (ImageView) view.findViewById(R.id.imageView);
             view.setTag(holder);
-        }else{
+        } else {
             holder = (ViewHolder) view.getTag();
         }
 
