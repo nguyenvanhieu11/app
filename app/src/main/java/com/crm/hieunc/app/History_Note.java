@@ -13,14 +13,21 @@ import android.widget.ListView;
 import java.util.ArrayList;
 
 public class History_Note extends Fragment {
+<<<<<<< HEAD
     ListView listHistory;
     ArrayList<String> list;
+=======
+
+    ListView lisviewNote;
+    ArrayList<String> arrayList;
+>>>>>>> origin/hieucompany
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.history_note, container, false);
 
+<<<<<<< HEAD
         listHistory = (ListView) view.findViewById(R.id.listHistory);
         list = new ArrayList<String>();
         list.add("lập trình php");
@@ -46,6 +53,30 @@ public class History_Note extends Fragment {
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, list);
         listHistory.setAdapter(adapter);
+=======
+        lisviewNote = (ListView) view.findViewById(R.id.listview);
+        arrayList = new ArrayList<>();
+
+        arrayList.add("công nghệ thông tin");
+        arrayList.add("điện tử viễn thông");
+        arrayList.add("công nghệ thông tin");
+        arrayList.add("công nghệ thông tin");
+        arrayList.add("điện tử viễn thông");
+        arrayList.add("công nghệ thông tin");
+        arrayList.add("công nghệ thông tin");
+        arrayList.add("điện tử viễn thông");
+        arrayList.add("công nghệ thông tin");
+        arrayList.add("công nghệ thông tin");
+        arrayList.add("điện tử viễn thông");
+        arrayList.add("công nghệ thông tin");
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(
+                getActivity(),
+                android.R.layout.simple_list_item_1,
+                arrayList
+        );
+        lisviewNote.setAdapter(adapter);
+>>>>>>> origin/hieucompany
         return view;
     }
 }
