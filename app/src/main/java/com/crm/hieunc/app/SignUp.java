@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class SignUp extends AppCompatActivity {
 
@@ -35,5 +36,14 @@ public class SignUp extends AppCompatActivity {
 
         btndk = (Button) findViewById(R.id.btndk);
         btnhuy = (Button) findViewById(R.id.btnhuy);
+
+        btndk.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(hoten.equals("") || tendn.equals("") || email.equals("") || password.equals("") || phone.equals("")){
+                    Toast.makeText(SignUp.this,"không được để trống",Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
     }
 }

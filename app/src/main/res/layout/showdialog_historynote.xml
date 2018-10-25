@@ -27,13 +27,13 @@
         android:orientation="vertical">
 
         <LinearLayout
+            android:id="@+id/ghichu"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:orientation="horizontal">
 
             <ImageView
-                android:id="@+id/luubai"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_gravity="center"
@@ -45,7 +45,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginLeft="20dp"
-                android:text="Lưu bài viết"
+                android:text="Thêm ghi chú"
                 android:textColor="#fff"
                 android:textSize="25dp" />
         </LinearLayout>
