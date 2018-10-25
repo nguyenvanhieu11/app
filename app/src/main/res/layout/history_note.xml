@@ -7,5 +7,18 @@
     android:layout_marginTop="56dp">
 
 
+    <TextView
+        android:textSize="20dp"
+        android:layout_marginTop="15dp"
+        android:layout_gravity="center"
+        android:text="bài viết đã lưu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <ListView
+        android:layout_marginTop="10dp"
+        android:id="@+id/listview"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+    </ListView>
     
 </LinearLayout>
