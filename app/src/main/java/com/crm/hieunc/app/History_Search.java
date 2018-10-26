@@ -13,10 +13,6 @@ public class History_Search extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-<<<<<<< HEAD
-=======
-
->>>>>>> origin/hieucompany
         View view = inflater.inflate(R.layout.history_search, container, false);
 
         return view;

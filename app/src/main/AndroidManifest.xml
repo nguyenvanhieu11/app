@@ -16,13 +16,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-<<<<<<< HEAD
-        <activity android:name=".SanPham"></activity>
-        <activity android:name=".HomePage"></activity>
-        <activity android:name=".SignUp"></activity>
-        <activity android:name=".Quen_MK"></activity>
-        <activity android:name=".Dang_bai"></activity>
-=======
         <activity android:name=".SanPham"
             android:label="Công Việc"
             android:colorMode="default"></activity>
@@ -34,6 +27,5 @@
             android:label="Quên Mật Khẩu"></activity>
         <activity android:name=".Dang_bai"
             android:label="Đăng Bài"></activity>
->>>>>>> origin/hieucompany
     </application>
 </manifest>
