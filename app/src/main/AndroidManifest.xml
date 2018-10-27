@@ -16,10 +16,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SanPham"></activity>
-        <activity android:name=".HomePage"></activity>
-        <activity android:name=".SignUp"></activity>
-        <activity android:name=".Quen_MK"></activity>
-        <activity android:name=".Dang_bai"></activity>
+        <activity android:name=".SanPham"
+            android:label="Công Việc"
+            android:colorMode="default"></activity>
+        <activity android:name=".HomePage"
+            android:label="Vieclam24h"></activity>
+        <activity android:name=".SignUp"
+            android:label="Đăng ký"></activity>
+        <activity android:name=".Quen_MK"
+            android:label="Quên Mật Khẩu"></activity>
+        <activity android:name=".Dang_bai"
+            android:label="Đăng Bài"></activity>
     </application>
 </manifest>
