@@ -2,25 +2,22 @@ package com.crm.hieunc.app;
 
 import android.app.Dialog;
 import android.content.Intent;
-import android.os.Build;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.annotation.RequiresApi;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Adapter;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
-import android.support.v7.widget.Toolbar;
 
 import java.util.ArrayList;
 
@@ -42,6 +39,8 @@ public class SanPham extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_sanpham);
 
+
+
         khoitao();
         adapter = new HomeAdapter(this, R.layout.home, arrayList);
         lvHome.setAdapter(adapter);
@@ -60,6 +59,7 @@ public class SanPham extends AppCompatActivity {
             }
         });
         dangbai();
+        myDialog = new Dialog(this);
     }
 
     private void khoitao() {
@@ -87,12 +87,12 @@ public class SanPham extends AppCompatActivity {
                 showDialog();
             }
         });
-        lvHome.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
-            @Override
-            public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
-                return false;
-            }
-        });
+//        lvHome.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+//            @Override
+//            public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
+//                return false;
+//            }
+//        });
     }
 
     @Override
@@ -143,6 +143,7 @@ public class SanPham extends AppCompatActivity {
                 myDialog.dismiss();
             }
         });
+        myDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         myDialog.show();
     }
 }
