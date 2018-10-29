@@ -4,6 +4,10 @@ import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+<<<<<<< HEAD
+=======
+import android.os.Build;
+>>>>>>> origin/home
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.ActionBar;
@@ -28,7 +32,6 @@ public class SanPham extends AppCompatActivity {
     ArrayList<String> listaddres, listtime, listluong;
     HomeAdapter adapter;
 
-    Dialog myDialog;
 
     Toolbar toolbar;
     private Spinner address, time, luong;
@@ -84,6 +87,7 @@ public class SanPham extends AppCompatActivity {
         lvHome.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+//                Toast.makeText(SanPham.this,"hihih",Toast.LENGTH_SHORT).show();
                 showDialog();
             }
         });
@@ -134,16 +138,25 @@ public class SanPham extends AppCompatActivity {
     }
 
     public void showDialog() {
+        final Dialog myDialog = new Dialog(this);
+        myDialog.setContentView(R.layout.dialogshow);
+        myDialog.setCanceledOnTouchOutside(false);
         TextView txtClose;
         txtClose = (TextView) myDialog.findViewById(R.id.close);
-        myDialog.setContentView(R.layout.dialogshow);
+        myDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        myDialog.show();
+
         txtClose.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 myDialog.dismiss();
             }
         });
+<<<<<<< HEAD
         myDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         myDialog.show();
+=======
+
+>>>>>>> origin/home
     }
 }

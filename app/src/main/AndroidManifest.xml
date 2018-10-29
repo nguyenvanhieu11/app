@@ -17,12 +17,15 @@
             </intent-filter>
         </activity>
 <<<<<<< HEAD
+<<<<<<< HEAD
         <activity android:name=".SanPham"></activity>
         <activity android:name=".HomePage"></activity>
         <activity android:name=".SignUp"></activity>
         <activity android:name=".Quen_MK"></activity>
         <activity android:name=".Dang_bai"></activity>
 =======
+=======
+>>>>>>> origin/home
         <activity android:name=".SanPham"
             android:label="Công Việc"
             android:colorMode="default"></activity>
@@ -34,6 +37,9 @@
             android:label="Quên Mật Khẩu"></activity>
         <activity android:name=".Dang_bai"
             android:label="Đăng Bài"></activity>
+<<<<<<< HEAD
 >>>>>>> origin/hieucompany
+=======
+>>>>>>> origin/home
     </application>
 </manifest>

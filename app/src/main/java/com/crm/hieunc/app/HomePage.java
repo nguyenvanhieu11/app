@@ -69,7 +69,7 @@ public class HomePage extends AppCompatActivity {
                                 getSupportFragmentManager().beginTransaction().replace(R.id.content_frame, new History_Note()).commit();
                                 break;
                             case R.id.historysearch:
-                                getSupportFragmentManager().beginTransaction().replace(R.id.content_frame, new History_Search()).commit();
+                                getSupportFragmentManager().beginTransaction().replace(R.id.content_frame, new History()).commit();
                                 break;
                             case R.id.helper:
                                 getSupportFragmentManager().beginTransaction().replace(R.id.content_frame, new Helper()).commit();
