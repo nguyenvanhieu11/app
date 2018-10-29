@@ -4,10 +4,6 @@ import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
-<<<<<<< HEAD
-=======
-import android.os.Build;
->>>>>>> origin/home
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.ActionBar;
@@ -62,7 +58,7 @@ public class SanPham extends AppCompatActivity {
             }
         });
         dangbai();
-        myDialog = new Dialog(this);
+        Dialog myDialog = new Dialog(this);
     }
 
     private void khoitao() {
@@ -152,11 +148,5 @@ public class SanPham extends AppCompatActivity {
                 myDialog.dismiss();
             }
         });
-<<<<<<< HEAD
-        myDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-        myDialog.show();
-=======
-
->>>>>>> origin/home
     }
 }

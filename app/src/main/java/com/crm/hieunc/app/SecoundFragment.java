@@ -12,16 +12,7 @@ public class SecoundFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-<<<<<<< HEAD:app/src/main/java/com/crm/hieunc/app/History_Search.java
-<<<<<<< HEAD
-=======
-
->>>>>>> origin/hieucompany
-        View view = inflater.inflate(R.layout.history_search, container, false);
-=======
         View view = inflater.inflate(R.layout.timkiemgan, container, false);
-
->>>>>>> origin/home:app/src/main/java/com/crm/hieunc/app/SecoundFragment.java
 
         return view;
     }
