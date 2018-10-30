@@ -2,6 +2,8 @@ package com.crm.hieunc.app;
 
 import android.app.Dialog;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -31,7 +33,6 @@ public class SanPham extends AppCompatActivity {
     ArrayList<String> listaddres, listtime, listluong;
     HomeAdapter adapter;
 
-    Dialog myDialog;
 
     Toolbar toolbar;
     private Spinner address, time, luong;
@@ -84,6 +85,7 @@ public class SanPham extends AppCompatActivity {
         lvHome.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+//                Toast.makeText(SanPham.this,"hihih",Toast.LENGTH_SHORT).show();
                 showDialog();
             }
         });
@@ -134,15 +136,20 @@ public class SanPham extends AppCompatActivity {
     }
 
     public void showDialog() {
+        final Dialog myDialog = new Dialog(this);
+        myDialog.setContentView(R.layout.dialogshow);
+        myDialog.setCanceledOnTouchOutside(false);
         TextView txtClose;
         txtClose = (TextView) myDialog.findViewById(R.id.close);
-        myDialog.setContentView(R.layout.dialogshow);
+        myDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        myDialog.show();
+
         txtClose.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 myDialog.dismiss();
             }
         });
-        myDialog.show();
+
     }
 }
