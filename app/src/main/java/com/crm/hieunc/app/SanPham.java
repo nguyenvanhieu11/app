@@ -15,6 +15,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -146,6 +147,30 @@ public class SanPham extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 myDialog.dismiss();
+            }
+        });
+
+        LinearLayout luu,xemct,xemvt;
+
+        luu = (LinearLayout)myDialog.findViewById(R.id.luubaiviet);
+        xemct = (LinearLayout)myDialog.findViewById(R.id.xemchitiet);
+        xemvt = (LinearLayout)myDialog.findViewById(R.id.xemvitri);
+        xemct.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                myDialog.dismiss();
+                Intent intent1 = new Intent(SanPham.this,Detail.class);
+                startActivity(intent1);
+
+            }
+        });
+
+        xemvt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                myDialog.dismiss();
+                Intent intent = new Intent(SanPham.this,SearchMap.class);
+                startActivity(intent);
             }
         });
     }
