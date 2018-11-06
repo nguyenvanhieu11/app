@@ -61,7 +61,7 @@ public class History_Note extends Fragment {
         return view;
     }
 
-    public void showdialog(){
+    public void showdialog() {
         final Dialog dialog = new Dialog(getActivity());
         dialog.setContentView(R.layout.showdialog_historynote);
         dialog.setCanceledOnTouchOutside(false);
