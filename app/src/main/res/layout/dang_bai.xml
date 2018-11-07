@@ -32,23 +32,24 @@
                 android:orientation="vertical"
                 android:padding="10dp">
 
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="0dp"
-                    app:srcCompat="@drawable/index" />
-
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="Tuyển dụng nhanh - Tìm việc dễ dàng"
                     android:textSize="20dp"
-                    android:textStyle="italic"
-                    android:tooltipText="fsdfd" />
+                    android:textStyle="bold"/>
+                <TextView
+                    android:layout_marginTop="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="bạn cần tìm người hay bạn cần tìm một công việc phù hợp hãy đăng bài để mọi người nhìn thấy"
+                    android:textSize="15dp"
+                    android:textStyle="italic"/>
 
                 <LinearLayout
+                    android:layout_marginTop="20dp"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:clipToPadding="false"
@@ -75,14 +76,14 @@
                                 android:layout_marginTop="20dp"
                                 android:background="@drawable/khung1"
                                 android:padding="10dp"
-                                android:src="@drawable/ic_group" />
+                                android:src="@drawable/ic_list" />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="5dp"
                                 android:gravity="center"
-                                android:text="Tuyển dụng doanh nghiệp"
+                                android:text="Chọn nghành nghề"
                                 android:textStyle="bold" />
 
                             <View
@@ -95,7 +96,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:gravity="center"
-                                android:text="cung cấp đầy đủ thông tin doanh nghiệp của bạn" />
+                                android:text="nghành nghề: " />
                         </LinearLayout>
                     </android.support.v7.widget.CardView>
 
@@ -117,48 +118,45 @@
                                 android:layout_width="65dp"
                                 android:layout_height="65dp"
                                 android:layout_marginTop="20dp"
-                                android:background="@drawable/khung2"
+                                android:background="@drawable/khung4"
                                 android:padding="10dp"
-                                android:src="@drawable/ic_person" />
+                                android:src="@drawable/ic_work" />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="5dp"
-                                android:text="Tuyển dụng tư nhân"
+                                android:text="Chi tiết công việc"
                                 android:textStyle="bold" />
 
                             <View
                                 android:layout_width="match_parent"
                                 android:layout_height="1dp"
                                 android:background="#ccc"
-                                android:padding="2dp" />
+                                android:padding="2dp"/>
 
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:gravity="center"
-                                android:text="Lập trình android and PHP and java" />
+                            <ImageView
+                                android:layout_marginBottom="5dp"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:layout_marginTop="20dp"
+                                android:background="@drawable/khung5"
+                                android:padding="10dp"
+                                android:src="@drawable/ic_clear" />
                         </LinearLayout>
                     </android.support.v7.widget.CardView>
                 </LinearLayout>
 
                 <LinearLayout
+                    android:layout_marginTop="20dp"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:clipToPadding="false"
                     android:gravity="center"
                     android:orientation="horizontal">
 
-                    <android.support.v7.widget.CardView
-                        android:id="@+id/cardviewfine"
-                        android:layout_width="340dp"
-                        android:layout_height="180dp"
-                        android:layout_margin="10dp"
-                        android:clickable="true"
-                        android:foreground="?android:attr/selectableItemBackground">
-
                         <LinearLayout
+
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:gravity="center"
@@ -168,30 +166,18 @@
                                 android:layout_width="65dp"
                                 android:layout_height="65dp"
                                 android:layout_marginTop="20dp"
-                                android:background="@drawable/khung5"
+                                android:background="@drawable/khung6"
                                 android:padding="10dp"
-                                android:src="@drawable/ic_thongbao" />
+                                android:src="@drawable/ic_edit_black_24dp" />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="5dp"
-                                android:text="Tuyển dụng khác"
+                                android:text="Hoàn Thành"
                                 android:textStyle="bold" />
 
-                            <View
-                                android:layout_width="match_parent"
-                                android:layout_height="1dp"
-                                android:background="#ccc"
-                                android:padding="2dp" />
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:gravity="center"
-                                android:text="Lập trình android and PHP and java" />
                         </LinearLayout>
-                    </android.support.v7.widget.CardView>
                 </LinearLayout>
             </LinearLayout>
         </ScrollView>
