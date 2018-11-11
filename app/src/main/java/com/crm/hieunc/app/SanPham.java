@@ -175,5 +175,13 @@ public class SanPham extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        luu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                myDialog.dismiss();
+                Toast.makeText(SanPham.this, "Lưu bài viết thành công ", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 }

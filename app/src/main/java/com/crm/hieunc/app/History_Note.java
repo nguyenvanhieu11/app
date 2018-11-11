@@ -16,6 +16,7 @@ import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -88,6 +89,14 @@ public class History_Note extends Fragment {
                 dialog.dismiss();
                 Intent intent1 = new Intent(getActivity(),Detail.class);
                 startActivity(intent1);
+            }
+        });
+
+        xoabv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.dismiss();
+                Toast.makeText(getActivity(),"Xóa bài viết thành công",Toast.LENGTH_SHORT).show();
             }
         });
     }

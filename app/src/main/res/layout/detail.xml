@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
     <LinearLayout
@@ -39,7 +40,6 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="15dp"
                 android:padding="10dp">
 
 
@@ -99,73 +99,98 @@
 
 
             </RelativeLayout>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:drawableLeft="@drawable/ic_detail"
-                android:paddingLeft="10dp"
-                android:text=" Mô tả công việc"
-                android:textSize="22sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_marginTop="6dp"
-                android:paddingLeft="20dp"
-                android:text="ở đây hiern thị thông tin chi tiết công việc"
-                android:textSize="17dp"
-                android:textStyle="italic" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:drawableLeft="@drawable/ic_detail"
-                android:paddingLeft="10dp"
-                android:text=" Yêu cầu công việc"
-                android:textSize="22sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="6dp"
-                android:paddingLeft="20dp"
-                android:text="ở đây hiern thị thông tin chi tiết công việc sfsdfdsfdsfsdfsdfsdfsdfdsfds"
-                android:textSize="17dp"
-                android:textStyle="italic" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="15dp"
-                android:orientation="horizontal"
+            <RelativeLayout
                 android:paddingLeft="10dp"
                 android:paddingRight="10dp"
-                android:weightSum="10">
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-                <Button
+                <android.support.design.widget.TabLayout
+                    android:id="@+id/tabs"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="3"
-                    android:background="#427b91"
-                    android:text="tạo hồ sơ"
-                    android:textColor="#fff" />
+                    android:layout_height="match_parent"
+                    app:tabMode="fixed"
+                    android:minHeight="?attr/actionBarSize"
+                    app:tabGravity="fill"
+                    app:tabTextColor="#427b91"
+                    app:tabSelectedTextColor="@color/colorAccent"/>
 
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="4" />
 
-                <Button
+                <android.support.v4.view.ViewPager
+                    android:id="@+id/pager"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="3"
-                    android:background="#429143"
-                    android:text="xem vị trí"
-                    android:textColor="#fff" />
-            </LinearLayout>
+                    android:layout_height="match_parent"/>
+
+
+            </RelativeLayout>
+            <!--<TextView-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:drawableLeft="@drawable/ic_detail"-->
+                <!--android:paddingLeft="10dp"-->
+                <!--android:text=" Mô tả công việc"-->
+                <!--android:textSize="22sp"-->
+                <!--android:textStyle="bold" />-->
+
+            <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:layout_marginTop="6dp"-->
+                <!--android:paddingLeft="20dp"-->
+                <!--android:text="ở đây hiern thị thông tin chi tiết công việc"-->
+                <!--android:textSize="17dp"-->
+                <!--android:textStyle="italic" />-->
+
+            <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:drawableLeft="@drawable/ic_detail"-->
+                <!--android:paddingLeft="10dp"-->
+                <!--android:text=" Yêu cầu công việc"-->
+                <!--android:textSize="22sp"-->
+                <!--android:textStyle="bold" />-->
+
+            <!--<TextView-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:layout_marginTop="6dp"-->
+                <!--android:paddingLeft="20dp"-->
+                <!--android:text="ở đây hiern thị thông tin chi tiết công việc sfsdfdsfdsfsdfsdfsdfsdfdsfds"-->
+                <!--android:textSize="17dp"-->
+                <!--android:textStyle="italic" />-->
+
+            <!--<LinearLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:layout_marginTop="15dp"-->
+                <!--android:orientation="horizontal"-->
+                <!--android:paddingLeft="10dp"-->
+                <!--android:paddingRight="10dp"-->
+                <!--android:weightSum="10">-->
+
+                <!--<Button-->
+                    <!--android:id="@+id/btntaohs"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_weight="3"-->
+                    <!--android:background="#427b91"-->
+                    <!--android:text="tạo hồ sơ"-->
+                    <!--android:textColor="#fff" />-->
+
+                <!--<View-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_weight="4" />-->
+
+                <!--<Button-->
+                    <!--android:id="@+id/btnmap"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_weight="3"-->
+                    <!--android:background="#429143"-->
+                    <!--android:text="xem vị trí"-->
+                    <!--android:textColor="#fff" />-->
+            <!--</LinearLayout>-->
         </LinearLayout>
     </ScrollView>
 </LinearLayout>
