@@ -8,10 +8,13 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
+        android:layout_margin="12dp"
         android:orientation="horizontal"
         android:weightSum="10">
-
+        <ImageView
+            android:id="@+id/hinhAnh"
+            android:layout_width="100dp"
+            android:layout_height="100dp" />
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

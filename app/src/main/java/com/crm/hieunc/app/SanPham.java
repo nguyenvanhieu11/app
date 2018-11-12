@@ -19,6 +19,7 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -65,21 +66,21 @@ public class SanPham extends AppCompatActivity {
     private void khoitao() {
         lvHome = (ListView) findViewById(R.id.listItem);
         arrayList = new ArrayList<>();
-        arrayList.add(new Home1("laptop macbooks 2018", "Ha Noi", "32.000.000", "còn hàng"));
-        arrayList.add(new Home1("laptop macbooks 2011", "Ha Noi", "32.000.000", "còn hàng"));
-        arrayList.add(new Home1("laptop macbooks 2013", "Ha Noi", "32.000.000", "còn hàng"));
-        arrayList.add(new Home1("laptop macbooks 2012", "Ha Noi", "32.000.000", "còn hàng"));
-        arrayList.add(new Home1("laptop macbooks 2015", "Ha Noi", "32.000.000", "còn hàng"));
-        arrayList.add(new Home1("laptop macbooks 2016", "Ha Noi", "32.000.000", "còn hàng"));
-        arrayList.add(new Home1("laptop macbooks 2007", "Ha Noi", "32.000.000", "còn hàng"));
-        arrayList.add(new Home1("laptop macbooks 2008", "Ha Noi", "32.000.000", "còn hàng"));
-        arrayList.add(new Home1("laptop macbooks 2010", "Ha Noi", "32.000.000", "còn hàng"));
-        arrayList.add(new Home1("laptop macbooks 2010", "Ha Noi", "32.000.000", "còn hàng"));
-        arrayList.add(new Home1("laptop macbooks 2010", "Ha Noi", "32.000.000", "còn hàng"));
-        arrayList.add(new Home1("laptop macbooks 2010", "Ha Noi", "32.000.000", "còn hàng"));
-        arrayList.add(new Home1("laptop macbooks 2010", "Ha Noi", "32.000.000", "còn hàng"));
-        arrayList.add(new Home1("laptop macbooks 2010", "Ha Noi", "32.000.000", "còn hàng"));
-        arrayList.add(new Home1("laptop macbooks 2010", "Ha Noi", "32.000.000", "còn hàng"));
+        arrayList.add(new Home1("laptop macbooks 2018", "Ha Noi", "32.000.000", "còn hàng", R.drawable.xeco));
+        arrayList.add(new Home1("laptop macbooks 2011", "Ha Noi", "32.000.000", "còn hàng", R.drawable.xeco));
+        arrayList.add(new Home1("laptop macbooks 2013", "Ha Noi", "32.000.000", "còn hàng", R.drawable.xeco));
+        arrayList.add(new Home1("laptop macbooks 2012", "Ha Noi", "32.000.000", "còn hàng", R.drawable.xeco));
+        arrayList.add(new Home1("laptop macbooks 2015", "Ha Noi", "32.000.000", "còn hàng", R.drawable.xeco));
+        arrayList.add(new Home1("laptop macbooks 2016", "Ha Noi", "32.000.000", "còn hàng", R.drawable.xeco));
+        arrayList.add(new Home1("laptop macbooks 2007", "Ha Noi", "32.000.000", "còn hàng", R.drawable.xeco));
+        arrayList.add(new Home1("laptop macbooks 2008", "Ha Noi", "32.000.000", "còn hàng", R.drawable.xeco));
+        arrayList.add(new Home1("laptop macbooks 2010", "Ha Noi", "32.000.000", "còn hàng", R.drawable.xeco));
+        arrayList.add(new Home1("laptop macbooks 2010", "Ha Noi", "32.000.000", "còn hàng", R.drawable.xeco));
+        arrayList.add(new Home1("laptop macbooks 2010", "Ha Noi", "32.000.000", "còn hàng", R.drawable.xeco));
+        arrayList.add(new Home1("laptop macbooks 2010", "Ha Noi", "32.000.000", "còn hàng", R.drawable.xeco));
+        arrayList.add(new Home1("laptop macbooks 2010", "Ha Noi", "32.000.000", "còn hàng", R.drawable.xeco));
+        arrayList.add(new Home1("laptop macbooks 2010", "Ha Noi", "32.000.000", "còn hàng", R.drawable.xeco));
+        arrayList.add(new Home1("laptop macbooks 2010", "Ha Noi", "32.000.000", "còn hàng", R.drawable.xeco));
 
         lvHome.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -171,6 +172,14 @@ public class SanPham extends AppCompatActivity {
                 myDialog.dismiss();
                 Intent intent = new Intent(SanPham.this,SearchMap.class);
                 startActivity(intent);
+            }
+        });
+
+        luu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                myDialog.dismiss();
+                Toast.makeText(SanPham.this, "Lưu bài viết thành công ", Toast.LENGTH_SHORT).show();
             }
         });
     }
