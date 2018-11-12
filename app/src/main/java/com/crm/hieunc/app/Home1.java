@@ -5,12 +5,14 @@ public class Home1 {
     private String DiaChi;
     private String Gia;
     private String TinhTrang;
+    private int HinhAnh;
 
-    public Home1(String ten, String diaChi, String gia, String tinhTrang) {
+    public Home1(String ten, String diaChi, String gia, String tinhTrang, int hinhAnh) {
         Ten = ten;
         DiaChi = diaChi;
         Gia = gia;
         TinhTrang = tinhTrang;
+        HinhAnh = hinhAnh;
     }
 
     public String getTen() {
@@ -43,5 +45,13 @@ public class Home1 {
 
     public void setTinhTrang(String tinhTrang) {
         TinhTrang = tinhTrang;
+    }
+
+    public int getHinhAnh() {
+        return HinhAnh;
+    }
+
+    public void setHinhAnh(int hinhAnh) {
+        HinhAnh = hinhAnh;
     }
 }

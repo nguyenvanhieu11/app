@@ -1,6 +1,7 @@
 package com.crm.hieunc.app;
 
 import android.content.Intent;
+import android.net.http.RequestQueue;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
@@ -14,6 +15,14 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonArrayRequest;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONArray;
+
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
@@ -23,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
 
     TextView next;
 
+    String url = "http://192.168.71.2/connectDB_to_android/getData.php";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
         adapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
         spinner.setAdapter(adapter);
         selectItem();
+        getData(url);
     }
 
     public void selectItem() {
@@ -72,5 +83,24 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    private void getData(String url) {
+        com.android.volley.RequestQueue requestQueue = Volley.newRequestQueue(this);
+        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, url, null,
+                new Response.Listener<JSONArray>() {
+                    @Override
+                    public void onResponse(JSONArray response) {
+                        Toast.makeText(MainActivity.this,response.toString(),Toast.LENGTH_LONG).show();
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Toast.makeText(MainActivity.this,"Lỗi",Toast.LENGTH_LONG).show();
+                    }
+                }
+        );
+        requestQueue.add(jsonArrayRequest);
     }
 }
