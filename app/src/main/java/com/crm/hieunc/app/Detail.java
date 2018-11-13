@@ -47,8 +47,8 @@ public class Detail extends AppCompatActivity {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
 
         // Add Fragments to adapter one by one
-        adapter.addFragment(new SecoundFragment(), "FRAG1");
-        adapter.addFragment(new LoginFragment(), "FRAG2");
+        adapter.addFragment(new SecoundFragment(), "THÔNG TIN");
+        adapter.addFragment(new LoginFragment(), "ĐÁNH GIÁ");
         viewPager.setAdapter(adapter);
 
         tabLayout = (TabLayout) findViewById(R.id.tabs);
