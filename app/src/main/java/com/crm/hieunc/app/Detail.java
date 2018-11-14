@@ -13,6 +13,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ListView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -47,12 +48,15 @@ public class Detail extends AppCompatActivity {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
 
         // Add Fragments to adapter one by one
-        adapter.addFragment(new SecoundFragment(), "THÔNG TIN");
-        adapter.addFragment(new LoginFragment(), "ĐÁNH GIÁ");
+        adapter.addFragment(new Detail1(), "THÔNG TIN");
+        adapter.addFragment(new Danhgia(), "ĐÁNH GIÁ");
         viewPager.setAdapter(adapter);
 
         tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(viewPager);
+
+        khoitao();
+
 
     }
 
@@ -95,6 +99,11 @@ public class Detail extends AppCompatActivity {
         public CharSequence getPageTitle(int position) {
             return mFragmentTitleList.get(position);
         }
+    }
+
+    private void khoitao() {
+
+
     }
 
 }
