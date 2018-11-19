@@ -5,7 +5,10 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.annotation.RequiresApi;
+import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -27,13 +30,12 @@ public class SanPham extends AppCompatActivity {
 
     ListView lvHome;
     ArrayList<Home1> arrayList;
-    ArrayList<String> listaddres, listtime, listluong;
     HomeAdapter adapter;
+
+    private BottomNavigationView nav_bottom;
 
 
     Toolbar toolbar;
-    private Spinner address, time, luong;
-    private Button dangbai;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -46,7 +48,6 @@ public class SanPham extends AppCompatActivity {
         adapter = new HomeAdapter(this, R.layout.home, arrayList);
         lvHome.setAdapter(adapter);
 
-        search();
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -59,8 +60,7 @@ public class SanPham extends AppCompatActivity {
                 onBackPressed();
             }
         });
-        dangbai();
-        Dialog myDialog = new Dialog(this);
+        eventnav();
     }
 
     private void khoitao() {
@@ -85,7 +85,6 @@ public class SanPham extends AppCompatActivity {
         lvHome.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-//                Toast.makeText(SanPham.this,"hihih",Toast.LENGTH_SHORT).show();
                 showDialog();
             }
         });
@@ -97,42 +96,35 @@ public class SanPham extends AppCompatActivity {
 //        });
     }
 
+    private void eventnav() {
+        nav_bottom = (BottomNavigationView) findViewById(R.id.nav_bottom);
+        nav_bottom.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+                switch (menuItem.getItemId()) {
+                    case R.id.add:
+                        Intent intenadd = new Intent(SanPham.this, Dang_bai.class);
+                        startActivity(intenadd);
+                        break;
+                    case R.id.search:
+                        Intent intensearch = new Intent(SanPham.this, TimKiem .class);
+                        startActivity(intensearch);
+                        break;
+                    case R.id.home:
+                        Intent intenhome = new Intent(SanPham.this, SecoundFragment.class);
+                        startActivity(intenhome);
+                        break;
+                }
+                return true;
+            }
+        });
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_item, menu);
         MenuItem searchItem = menu.findItem(R.id.search);
         return true;
-    }
-
-    public void search() {
-
-        address = (Spinner) findViewById(R.id.address);
-        time = (Spinner) findViewById(R.id.time);
-        luong = (Spinner) findViewById(R.id.luong);
-
-        listaddres = new ArrayList<String>();
-        listaddres.add("Hà Nội");
-        listaddres.add("Huế");
-        listaddres.add("Nha Trang");
-        listaddres.add("Cần Sa");
-        listaddres.add("Vũng  tàu");
-        listaddres.add("Mộc Hoán");
-
-        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(SanPham.this, android.R.layout.simple_expandable_list_item_1, listaddres);
-        address.setAdapter(arrayAdapter);
-        time.setAdapter(arrayAdapter);
-        luong.setAdapter(arrayAdapter);
-    }
-
-    public void dangbai() {
-        dangbai = (Button) findViewById(R.id.dangbai);
-        dangbai.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent dang = new Intent(SanPham.this, Dang_bai.class);
-                startActivity(dang);
-            }
-        });
     }
 
     public void showDialog() {
@@ -151,16 +143,16 @@ public class SanPham extends AppCompatActivity {
             }
         });
 
-        LinearLayout luu,xemct,xemvt;
+        LinearLayout luu, xemct, xemvt;
 
-        luu = (LinearLayout)myDialog.findViewById(R.id.luubaiviet);
-        xemct = (LinearLayout)myDialog.findViewById(R.id.xemchitiet);
-        xemvt = (LinearLayout)myDialog.findViewById(R.id.xemvitri);
+        luu = (LinearLayout) myDialog.findViewById(R.id.luubaiviet);
+        xemct = (LinearLayout) myDialog.findViewById(R.id.xemchitiet);
+        xemvt = (LinearLayout) myDialog.findViewById(R.id.xemvitri);
         xemct.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 myDialog.dismiss();
-                Intent intent1 = new Intent(SanPham.this,Detail.class);
+                Intent intent1 = new Intent(SanPham.this, Detail.class);
                 startActivity(intent1);
 
             }
@@ -170,7 +162,7 @@ public class SanPham extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 myDialog.dismiss();
-                Intent intent = new Intent(SanPham.this,SearchMap.class);
+                Intent intent = new Intent(SanPham.this, SearchMap.class);
                 startActivity(intent);
             }
         });
