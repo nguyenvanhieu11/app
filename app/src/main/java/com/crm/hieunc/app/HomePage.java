@@ -24,6 +24,7 @@ public class HomePage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.pagerhome);
 
+        overridePendingTransition(R.anim.side_in_right, R.anim.slide_out_left);
 //        btndangtin = (Button) findViewById(R.id.btndangbai);
 
         toolbar = findViewById(R.id.toolbar);

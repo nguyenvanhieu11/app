@@ -15,7 +15,7 @@ public class TimKiem extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.timkiem);
-
+        overridePendingTransition(R.anim.side_in_right, R.anim.slide_out_left);
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 

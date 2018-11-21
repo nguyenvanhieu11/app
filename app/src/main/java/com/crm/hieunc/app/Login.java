@@ -32,7 +32,6 @@ public class Login extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.loginandsignin, container, false);
 
-
         username = (EditText) view.findViewById(R.id.username);
         password = (EditText) view.findViewById(R.id.password);
         remember = (CheckBox) view.findViewById(R.id.remember);

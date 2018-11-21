@@ -18,6 +18,8 @@ public class Quen_MK extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_quen_mk);
 
+        overridePendingTransition(R.anim.side_in_right, R.anim.slide_out_left);
+
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 

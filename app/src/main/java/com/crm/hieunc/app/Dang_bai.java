@@ -6,12 +6,6 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.Spinner;
-import android.widget.TextView;
-import android.widget.Toast;
-
-import java.util.ArrayList;
 
 public class Dang_bai extends AppCompatActivity {
 
@@ -21,7 +15,7 @@ public class Dang_bai extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.dang_bai);
-
+        overridePendingTransition(R.anim.side_in_right, R.anim.slide_out_left);
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 

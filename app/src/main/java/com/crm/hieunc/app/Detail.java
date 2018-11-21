@@ -11,8 +11,6 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.widget.Button;
-import android.widget.ListView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,7 +26,7 @@ public class Detail extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.detail);
-
+        overridePendingTransition(R.anim.side_in_right, R.anim.slide_out_left);
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 

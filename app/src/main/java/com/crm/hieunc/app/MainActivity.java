@@ -1,16 +1,11 @@
 package com.crm.hieunc.app;
 
 import android.content.Intent;
-import android.net.http.RequestQueue;
 import android.os.Bundle;
-import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.ProgressBar;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -37,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        overridePendingTransition(R.anim.side_in_right, R.anim.slide_out_left);
         spinner = (Spinner) findViewById(R.id.spinner);
         next = (TextView) findViewById(R.id.next);
         list = new ArrayList<>();
