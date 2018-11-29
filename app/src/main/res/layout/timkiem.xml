@@ -15,6 +15,164 @@
             android:background="#427b91"
             android:theme="@style/ThemeOverlay.AppCompat.ActionBar" />
 
+    <ScrollView
+        android:layout_marginTop="56dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:textStyle="bold"
+                android:layout_margin="20dp"
+                android:layout_marginTop="10dp"
+                android:textSize="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Tìm kiếm thông tin công việc"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:textStyle="italic"
+                    android:padding="5dp"
+                    android:text="Tìm kiếm công việc theo tên"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+                <EditText
+                    android:padding="10dp"
+                    android:layout_margin="5dp"
+                    android:hint="tên công việc "
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:textStyle="italic"
+                    android:padding="5dp"
+                    android:text="Tìm kiếm công việc theo vị trí"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <Spinner
+                    android:padding="10dp"
+                    android:layout_margin="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp">
+
+                </Spinner>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:textStyle="italic"
+                    android:padding="5dp"
+                    android:text="Tìm kiếm công việc theo nghành nghề"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <Spinner
+                    android:padding="10dp"
+                    android:layout_margin="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp">
+
+                </Spinner>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:textStyle="italic"
+                    android:padding="5dp"
+                    android:text="Tìm kiếm công việc theo mức lương"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+
+                <LinearLayout
+                    android:weightSum="10"
+                    android:layout_margin="5dp"
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_weight="1"
+                        android:layout_marginTop="12dp"
+                        android:layout_width="wrap_content"
+                        android:text="Từ"
+                        android:layout_height="wrap_content" />
+                    <Spinner
+                        android:layout_weight="4"
+                        android:padding="10dp"
+                        android:layout_margin="5dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="35dp"/>
+                    <TextView
+                        android:layout_weight="1"
+                        android:layout_marginTop="12dp"
+                        android:layout_width="wrap_content"
+                        android:text="Đến"
+                        android:layout_height="wrap_content" />
+                    <Spinner
+                        android:layout_weight="4"
+                        android:padding="10dp"
+                        android:layout_margin="5dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="35dp"/>
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_marginTop="15dp"
+                android:layout_margin="5dp"
+                android:weightSum="10"
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:layout_margin="3dp"
+
+                    android:textColor="#fff"
+                    android:background="#427b91"
+                    android:text="tìm kiếm"
+                    android:layout_weight="5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <Button
+                    android:layout_margin="3dp"
+                    android:textColor="#fff"
+                    android:background="#d25c5c"
+                    android:text="hủy"
+                    android:layout_weight="5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </ScrollView>
+
     </RelativeLayout>
 
     <ScrollView
