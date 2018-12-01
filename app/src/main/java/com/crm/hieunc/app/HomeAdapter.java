@@ -45,16 +45,18 @@ public class HomeAdapter extends BaseAdapter {
 
         TextView ten = (TextView) view.findViewById(R.id.nameProduct);
         TextView address = (TextView) view.findViewById(R.id.Address);
-        TextView gia = (TextView) view.findViewById(R.id.giaban);
-        TextView tinhtrang = (TextView) view.findViewById(R.id.tinhtrang);
-        ImageView img = (ImageView)view.findViewById(R.id.hinhAnh);
+        TextView nguoidang = (TextView) view.findViewById(R.id.nguoidang);
+        TextView nghanhnghe = (TextView) view.findViewById(R.id.nghanhnghe);
+        TextView ngaydang = (TextView) view.findViewById(R.id.ngaydang);
+        ImageView img = (ImageView) view.findViewById(R.id.hinhAnh);
 
         Home1 home1 = home1List.get(i);
 
-        ten.setText(home1.getTen());
-        address.setText(home1.getDiaChi());
-        gia.setText(home1.getGia());
-        tinhtrang.setText(home1.getTinhTrang());
+        ten.setText(home1.getTen_cong_viec());
+        address.setText(home1.getVi_tri());
+        nguoidang.setText(home1.getNguoi_dang());
+        ngaydang.setText(home1.getNgay_dang());
+        nghanhnghe.setText(home1.getNghanh_nghe());
         img.setImageResource(home1.getHinhAnh());
         return view;
     }

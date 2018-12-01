@@ -2,8 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.crm.hieunc.app">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
-    
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -14,7 +14,7 @@
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="@string/map"/>
+            android:value="@string/map" />
 
         <activity android:name=".MainActivity">
             <intent-filter>
@@ -23,24 +23,30 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SanPham"
-            android:label="Công Việc"
-            android:colorMode="default"></activity>
-        <activity android:name=".HomePage"
+        <activity
+            android:name=".SanPham"
+            android:colorMode="default"
+            android:label="Công Việc"></activity>
+        <activity
+            android:name=".HomePage"
             android:label="Vieclam24h"></activity>
-        <activity android:name=".SignUp"
+        <activity
+            android:name=".SignUp"
             android:label="Đăng ký"></activity>
-        <activity android:name=".Quen_MK"
+        <activity
+            android:name=".Quen_MK"
             android:label="Quên Mật Khẩu"></activity>
-        <activity android:name=".Dang_bai"
+        <activity
+            android:name=".Dang_bai"
             android:label="Đăng Bài"></activity>
-        <activity android:name=".Detail"
+        <activity
+            android:name=".Detail"
             android:label="Chi tiết"></activity>
-        <activity android:name=".SearchMap"
-            android:label="Tìm vị trí">
-        </activity>
-        <activity android:name=".TimKiem"
-            android:label="Tìm Kiếm">
-        </activity>
+        <activity
+            android:name=".SearchMap"
+            android:label="Tìm vị trí"></activity>
+        <activity
+            android:name=".TimKiem"
+            android:label="Tìm Kiếm"></activity>
     </application>
 </manifest>

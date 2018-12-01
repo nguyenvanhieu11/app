@@ -38,146 +38,170 @@
                     android:layout_gravity="center"
                     android:text="Tuyển dụng nhanh - Tìm việc dễ dàng"
                     android:textSize="20dp"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold" />
+
                 <TextView
-                    android:layout_marginTop="10dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
                     android:gravity="center"
                     android:text="bạn cần tìm người hay bạn cần tìm một công việc phù hợp hãy đăng bài để mọi người nhìn thấy"
                     android:textSize="15dp"
-                    android:textStyle="italic"/>
+                    android:textStyle="italic" />
 
                 <LinearLayout
-                    android:layout_marginTop="20dp"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:layout_marginTop="20dp"
                     android:clipToPadding="false"
-                    android:gravity="center"
-                    android:orientation="horizontal">
+                    android:orientation="vertical">
 
-                    <android.support.v7.widget.CardView
-                        android:id="@+id/cardviewone"
-                        android:layout_width="160dp"
-                        android:layout_height="180dp"
-                        android:layout_margin="10dp"
-                        android:clickable="true"
-                        android:foreground="?android:attr/selectableItemBackground">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Chọn vị trí vùng miền"
+                        android:textSize="17sp"
+                        android:textStyle="bold" />
 
-                        <LinearLayout
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp">
+
+                        <RadioGroup
+                            android:id="@+id/vungmien"
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:gravity="center"
-                            android:orientation="vertical">
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:orientation="horizontal">
 
-                            <ImageView
-                                android:layout_width="65dp"
-                                android:layout_height="65dp"
-                                android:layout_marginTop="20dp"
-                                android:background="@drawable/khung1"
-                                android:padding="10dp"
-                                android:src="@drawable/ic_list" />
-
-                            <TextView
+                            <RadioButton
+                                android:id="@+id/mienbac"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="5dp"
-                                android:gravity="center"
-                                android:text="Chọn nghành nghề"
-                                android:textStyle="bold" />
+                                android:layout_marginRight="10dp"
+                                android:text="Miền Bắc" />
 
-                            <View
-                                android:layout_width="match_parent"
-                                android:layout_height="1dp"
-                                android:background="#ccc"
-                                android:padding="2dp" />
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:gravity="center"
-                                android:text="nghành nghề: " />
-                        </LinearLayout>
-                    </android.support.v7.widget.CardView>
-
-                    <android.support.v7.widget.CardView
-                        android:id="@+id/cardviewtow"
-                        android:layout_width="160dp"
-                        android:layout_height="180dp"
-                        android:layout_margin="10dp"
-                        android:clickable="true"
-                        android:foreground="?android:attr/selectableItemBackground">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:gravity="center"
-                            android:orientation="vertical">
-
-                            <ImageView
-                                android:layout_width="65dp"
-                                android:layout_height="65dp"
-                                android:layout_marginTop="20dp"
-                                android:background="@drawable/khung4"
-                                android:padding="10dp"
-                                android:src="@drawable/ic_work" />
-
-                            <TextView
+                            <RadioButton
+                                android:id="@+id/miennam"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="5dp"
-                                android:text="Chi tiết công việc"
-                                android:textStyle="bold" />
+                                android:layout_marginLeft="10dp"
+                                android:text="Miền Nam" />
+                        </RadioGroup>
+                    </RelativeLayout>
 
-                            <View
-                                android:layout_width="match_parent"
-                                android:layout_height="1dp"
-                                android:background="#ccc"
-                                android:padding="2dp"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Chọn vị trí "
+                        android:textSize="17sp"
+                        android:textStyle="bold" />
 
-                            <ImageView
-                                android:layout_marginBottom="5dp"
-                                android:layout_width="50dp"
-                                android:layout_height="50dp"
-                                android:layout_marginTop="20dp"
-                                android:background="@drawable/khung5"
-                                android:padding="10dp"
-                                android:src="@drawable/ic_clear" />
-                        </LinearLayout>
-                    </android.support.v7.widget.CardView>
+                    <Spinner
+                        android:id="@+id/vitri"
+                        android:layout_width="match_parent"
+                        android:layout_height="35dp"
+                        android:layout_marginTop="5dp"></Spinner>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Tên công việc "
+                        android:textSize="17sp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/tencongviec"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="tên công việc của bạn ..." />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:gravity="top"
+                        android:inputType="text|textMultiLine"
+                        android:maxLines="2"
+                        android:text="Chọn cấp bậc"
+                        android:textSize="17sp"
+                        android:textStyle="bold" />
+
+                    <Spinner
+                        android:id="@+id/capbac"
+                        android:layout_width="match_parent"
+                        android:layout_height="35dp"
+                        android:layout_marginTop="5dp"></Spinner>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Mô tả công việc"
+                        android:textSize="17sp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/edit_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        android:gravity="top"
+                        android:inputType="text|textMultiLine"
+                        android:maxLines="10" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Yêu cầu công việc"
+                        android:textSize="17sp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/edit"
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        android:gravity="top"
+                        android:inputType="text|textMultiLine"
+                        android:maxLines="10" />
+
+
                 </LinearLayout>
 
                 <LinearLayout
-                    android:layout_marginTop="20dp"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:layout_marginTop="20dp"
                     android:clipToPadding="false"
                     android:gravity="center"
                     android:orientation="horizontal">
 
-                        <LinearLayout
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="vertical">
 
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:gravity="center"
-                            android:orientation="vertical">
+                        <ImageView
+                            android:id="@+id/dangbai"
+                            android:layout_width="65dp"
+                            android:layout_height="65dp"
+                            android:layout_marginTop="20dp"
+                            android:background="@drawable/khung6"
+                            android:padding="10dp"
+                            android:src="@drawable/ic_edit_black_24dp" />
 
-                            <ImageView
-                                android:layout_width="65dp"
-                                android:layout_height="65dp"
-                                android:layout_marginTop="20dp"
-                                android:background="@drawable/khung6"
-                                android:padding="10dp"
-                                android:src="@drawable/ic_edit_black_24dp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:text="Hoàn Thành"
+                            android:textStyle="bold" />
 
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="5dp"
-                                android:text="Hoàn Thành"
-                                android:textStyle="bold" />
-
-                        </LinearLayout>
+                    </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
         </ScrollView>

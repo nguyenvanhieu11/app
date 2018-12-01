@@ -1,5 +1,6 @@
 package com.crm.hieunc.app;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.NavigationView;
@@ -12,6 +13,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class HomePage extends AppCompatActivity {
     private DrawerLayout mDrawerLayout;
@@ -25,7 +27,6 @@ public class HomePage extends AppCompatActivity {
         setContentView(R.layout.pagerhome);
 
         overridePendingTransition(R.anim.side_in_right, R.anim.slide_out_left);
-//        btndangtin = (Button) findViewById(R.id.btndangbai);
 
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -43,6 +44,18 @@ public class HomePage extends AppCompatActivity {
             navigationView.setCheckedItem(R.id.home);
         }
 
+        String id = "";
+        Intent intent = getIntent();
+        if (intent != null) {
+            Bundle bundle = intent.getBundleExtra(MainActivity.BUNDLE);
+            if (bundle != null) {
+                id = (bundle.getString(MainActivity.ID));
+                Toast.makeText(getApplication(), id, Toast.LENGTH_LONG).show();
+            } else {
+                id = (intent.getStringExtra(MainActivity.ID));
+                Toast.makeText(getApplication(), id, Toast.LENGTH_LONG).show();
+            }
+        }
 
         navigationView.setNavigationItemSelectedListener(
                 new NavigationView.OnNavigationItemSelectedListener() {
@@ -116,14 +129,6 @@ public class HomePage extends AppCompatActivity {
                 return true;
         }
         return super.onOptionsItemSelected(item);
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_prop, menu);
-        MenuItem searchItem = menu.findItem(R.id.search);
-
-        return true;
     }
 
 }

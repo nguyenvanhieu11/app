@@ -20,6 +20,17 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonArrayRequest;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.ArrayList;
 
 public class SanPham extends AppCompatActivity {
@@ -27,11 +38,10 @@ public class SanPham extends AppCompatActivity {
     ListView lvHome;
     ArrayList<Home1> arrayList;
     HomeAdapter adapter;
-
     private BottomNavigationView nav_bottom;
-
-
     Toolbar toolbar;
+
+    String url = "http://192.168.1.143:8888/connectDB_to_android/getAllcongviec.php";
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -60,34 +70,13 @@ public class SanPham extends AppCompatActivity {
     private void khoitao() {
         lvHome = (ListView) findViewById(R.id.listItem);
         arrayList = new ArrayList<>();
-        arrayList.add(new Home1("laptop macbooks 2018", "Ha Noi", "32.000.000", "còn hàng", R.drawable.xeco));
-        arrayList.add(new Home1("laptop macbooks 2011", "Ha Noi", "32.000.000", "còn hàng", R.drawable.xeco));
-        arrayList.add(new Home1("laptop macbooks 2013", "Ha Noi", "32.000.000", "còn hàng", R.drawable.xeco));
-        arrayList.add(new Home1("laptop macbooks 2012", "Ha Noi", "32.000.000", "còn hàng", R.drawable.xeco));
-        arrayList.add(new Home1("laptop macbooks 2015", "Ha Noi", "32.000.000", "còn hàng", R.drawable.xeco));
-        arrayList.add(new Home1("laptop macbooks 2016", "Ha Noi", "32.000.000", "còn hàng", R.drawable.xeco));
-        arrayList.add(new Home1("laptop macbooks 2007", "Ha Noi", "32.000.000", "còn hàng", R.drawable.xeco));
-        arrayList.add(new Home1("laptop macbooks 2008", "Ha Noi", "32.000.000", "còn hàng", R.drawable.xeco));
-        arrayList.add(new Home1("laptop macbooks 2010", "Ha Noi", "32.000.000", "còn hàng", R.drawable.xeco));
-        arrayList.add(new Home1("laptop macbooks 2010", "Ha Noi", "32.000.000", "còn hàng", R.drawable.xeco));
-        arrayList.add(new Home1("laptop macbooks 2010", "Ha Noi", "32.000.000", "còn hàng", R.drawable.xeco));
-        arrayList.add(new Home1("laptop macbooks 2010", "Ha Noi", "32.000.000", "còn hàng", R.drawable.xeco));
-        arrayList.add(new Home1("laptop macbooks 2010", "Ha Noi", "32.000.000", "còn hàng", R.drawable.xeco));
-        arrayList.add(new Home1("laptop macbooks 2010", "Ha Noi", "32.000.000", "còn hàng", R.drawable.xeco));
-        arrayList.add(new Home1("laptop macbooks 2010", "Ha Noi", "32.000.000", "còn hàng", R.drawable.xeco));
-
+        getData(url);
         lvHome.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 showDialog();
             }
         });
-//        lvHome.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
-//            @Override
-//            public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
-//                return false;
-//            }
-//        });
     }
 
     private void eventnav() {
@@ -101,11 +90,11 @@ public class SanPham extends AppCompatActivity {
                         startActivity(intenadd);
                         break;
                     case R.id.search:
-                        Intent intensearch = new Intent(SanPham.this, TimKiem .class);
+                        Intent intensearch = new Intent(SanPham.this, TimKiem.class);
                         startActivity(intensearch);
                         break;
                     case R.id.home:
-                        Intent intenhome = new Intent(SanPham.this, SecoundFragment.class);
+                        Intent intenhome = new Intent(SanPham.this, SanPham.class);
                         startActivity(intenhome);
                         break;
                 }
@@ -168,5 +157,38 @@ public class SanPham extends AppCompatActivity {
                 Toast.makeText(SanPham.this, "Lưu bài viết thành công ", Toast.LENGTH_SHORT).show();
             }
         });
+    }
+
+    private void getData(String url) {
+        RequestQueue requestQueue = Volley.newRequestQueue(this);
+        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, url, null,
+                new Response.Listener<JSONArray>() {
+                    @Override
+                    public void onResponse(JSONArray response) {
+                        for (int i = 0; i < response.length(); i++) {
+                            try {
+                                JSONObject jsonObject = response.getJSONObject(i);
+                                arrayList.add(new Home1(
+                                        jsonObject.getString("Ten_cong_viec"),
+                                        "Vi tri : " + jsonObject.getString("Ten_vi_tri"),
+                                        jsonObject.getString("Ngay_dang"),
+                                        "Nghành nghề : " + jsonObject.getString("Ten_nghanh_nghe"),
+                                        R.drawable.xeco,
+                                        "Người đăng : " + jsonObject.getString("Ten_thanh_vien")
+                                ));
+                            } catch (JSONException e) {
+                                e.printStackTrace();
+                            }
+                        }
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Toast.makeText(SanPham.this, error.toString(), Toast.LENGTH_LONG).show();
+                    }
+                }
+        );
+        requestQueue.add(jsonArrayRequest);
     }
 }

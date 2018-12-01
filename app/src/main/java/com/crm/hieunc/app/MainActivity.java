@@ -1,6 +1,8 @@
 package com.crm.hieunc.app;
 
 import android.content.Intent;
+import android.media.audiofx.DynamicsProcessing;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -10,24 +12,41 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
+import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
+import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
+import org.apache.http.HttpEntity;
+import org.apache.http.HttpResponse;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.impl.client.DefaultHttpClient;
 import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
 
+    public static final String BUNDLE = "bundel";
     Spinner spinner;
-    ArrayList<String> list;
-
+    ArrayList<String> listItems = new ArrayList<>();
+    ArrayAdapter<String> adapter;
     TextView next;
+    public static final String ID = "ID";
 
-    String url = "http://192.168.71.2/connectDB_to_android/getData.php";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,15 +54,12 @@ public class MainActivity extends AppCompatActivity {
         overridePendingTransition(R.anim.side_in_right, R.anim.slide_out_left);
         spinner = (Spinner) findViewById(R.id.spinner);
         next = (TextView) findViewById(R.id.next);
-        list = new ArrayList<>();
-        list.add("Miền Bắc");
-        list.add("Miền Nam");
 
-        ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_expandable_list_item_1, list);
-        adapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
+        adapter = new ArrayAdapter<String>(this, R.layout.spinner_layout, R.id.txt, listItems);
         spinner.setAdapter(adapter);
+
         selectItem();
-        getData(url);
+
     }
 
     public void selectItem() {
@@ -55,21 +71,30 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View view) {
                         String text = adapterView.getItemAtPosition(i).toString();
+
+                        String id = "";
                         switch (text) {
                             case "Miền Bắc":
+                                id = " 1 ";
                                 Intent intent = new Intent(MainActivity.this, HomePage.class);
+                                intent.putExtra(ID, id);
                                 startActivity(intent);
-//                                Toast.makeText(MainActivity.this,text,Toast.LENGTH_SHORT).show();
                                 break;
                             case "Miền Nam":
+                                id = " 2 ";
                                 Intent intent1 = new Intent(MainActivity.this, HomePage.class);
+                                intent1.putExtra(ID, id);
                                 startActivity(intent1);
-//                                Toast.makeText(MainActivity.this,text,Toast.LENGTH_SHORT).show();
+                                break;
+                            case "Miền Trung":
+                                id = " 3 ";
+                                Intent intent2 = new Intent(MainActivity.this, HomePage.class);
+                                intent2.putExtra(ID, id);
+                                startActivity(intent2);
                                 break;
                         }
                     }
                 });
-
             }
 
             @Override
@@ -80,22 +105,64 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private void getData(String url) {
-        com.android.volley.RequestQueue requestQueue = Volley.newRequestQueue(this);
-        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, url, null,
-                new Response.Listener<JSONArray>() {
-                    @Override
-                    public void onResponse(JSONArray response) {
-                        Toast.makeText(MainActivity.this,response.toString(),Toast.LENGTH_LONG).show();
-                    }
-                },
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(MainActivity.this,"Lỗi",Toast.LENGTH_LONG).show();
-                    }
-                }
-        );
-        requestQueue.add(jsonArrayRequest);
+    public void onStart() {
+        super.onStart();
+        BackTask bt = new BackTask();
+        bt.execute();
     }
+
+    private class BackTask extends AsyncTask<Void, Void, Void> {
+        ArrayList<String> list;
+
+        protected void onPreExecute() {
+            super.onPreExecute();
+            list = new ArrayList<>();
+        }
+
+        protected Void doInBackground(Void... params) {
+            InputStream is = null;
+            String result = "";
+            try {
+                HttpClient httpclient = new DefaultHttpClient();
+                HttpPost httppost = new HttpPost("http://192.168.1.143:8888/connectDB_to_android/getVungmien.php");
+                HttpResponse response = httpclient.execute(httppost);
+                HttpEntity entity = response.getEntity();
+                // Get our response as a String.
+                is = entity.getContent();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            //convert response to string
+            try {
+                BufferedReader reader = new BufferedReader(new InputStreamReader(is, "utf-8"));
+                String line = null;
+                while ((line = reader.readLine()) != null) {
+                    result += line;
+                }
+                is.close();
+                //result=sb.toString();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            // parse json data
+            try {
+                JSONArray jArray = new JSONArray(result);
+                for (int i = 0; i < jArray.length(); i++) {
+                    JSONObject jsonObject = jArray.getJSONObject(i);
+                    // add interviewee name to arraylist
+                    list.add(jsonObject.getString("Ten_vung_mien"));
+                }
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+            return null;
+        }
+
+        protected void onPostExecute(Void result) {
+            listItems.addAll(list);
+            adapter.notifyDataSetChanged();
+        }
+    }
+
 }

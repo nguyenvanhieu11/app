@@ -11,10 +11,12 @@
         android:layout_margin="12dp"
         android:orientation="horizontal"
         android:weightSum="10">
+
         <ImageView
             android:id="@+id/hinhAnh"
             android:layout_width="100dp"
             android:layout_height="100dp" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -27,26 +29,36 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Ten san pham"
-                android:textSize="21dp" />
+                android:textColor="#0e1012"
+                android:textSize="17dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/nguoidang"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nguoi dang" />
 
             <TextView
                 android:id="@+id/Address"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Dia chi" />
+                android:text="Vi tri" />
 
             <TextView
-                android:id="@+id/giaban"
+                android:id="@+id/nghanhnghe"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="gia ban" />
+                android:text="nghanh nghe" />
 
             <TextView
-                android:id="@+id/tinhtrang"
+                android:id="@+id/ngaydang"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="tinh trang" />
-
+                android:layout_marginRight="2dp"
+                android:gravity="end"
+                android:text="ngaydang"
+                android:textSize="12dp" />
 
         </LinearLayout>
     </LinearLayout>

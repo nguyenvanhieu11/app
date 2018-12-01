@@ -1,5 +1,6 @@
 package com.crm.hieunc.app;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
@@ -11,6 +12,7 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.Button;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,7 +20,7 @@ import java.util.List;
 public class Detail extends AppCompatActivity {
 
     Toolbar toolbar;
-//    Button btnhs, btnmap;
+    Button btnhs;
     ViewPager viewPager;
     TabLayout tabLayout;
 
@@ -53,21 +55,20 @@ public class Detail extends AppCompatActivity {
         tabLayout.setupWithViewPager(viewPager);
 
         khoitao();
-
+        event();
 
     }
 
-//    private void event(){
-//        btnhs = (Button)findViewById(R.id.btntaohs);
-//        btnmap = (Button)findViewById(R.id.btnmap);
-//        btnmap.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent intentmap = new Intent(Detail.this,SearchMap.class);
-//                startActivity(intentmap);
-//            }
-//        });
-//    }
+    private void event() {
+        btnhs = (Button) findViewById(R.id.taohs);
+        btnhs.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intentmap = new Intent(Detail.this, TrangChu.class);
+                startActivity(intentmap);
+            }
+        });
+    }
 
     class ViewPagerAdapter extends FragmentPagerAdapter {
         private final List<Fragment> mFragmentList = new ArrayList<>();
