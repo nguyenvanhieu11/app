@@ -16,10 +16,10 @@ import android.widget.Button;
 import android.widget.Toast;
 
 public class HomePage extends AppCompatActivity {
+    public static final String BUNDLE = "bundel";
     private DrawerLayout mDrawerLayout;
     Toolbar toolbar;
-
-    Button btndangtin;
+    public static final String IDvungmien = "IDvungmien";
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -39,35 +39,31 @@ public class HomePage extends AppCompatActivity {
 
         NavigationView navigationView = findViewById(R.id.nav_view);
 
-        if (savedInstanceState == null) {
-            getSupportFragmentManager().beginTransaction().replace(R.id.content_frame, new TrangChu()).commit();
-            navigationView.setCheckedItem(R.id.home);
-        }
-
         String id = "";
         Intent intent = getIntent();
         if (intent != null) {
             Bundle bundle = intent.getBundleExtra(MainActivity.BUNDLE);
             if (bundle != null) {
                 id = (bundle.getString(MainActivity.ID));
-                Toast.makeText(getApplication(), id, Toast.LENGTH_LONG).show();
             } else {
                 id = (intent.getStringExtra(MainActivity.ID));
-                Toast.makeText(getApplication(), id, Toast.LENGTH_LONG).show();
             }
+        }
+
+        final String Idvungmien = id;
+        Toast.makeText(getApplication(), Idvungmien , Toast.LENGTH_LONG).show();
+
+        if (savedInstanceState == null) {
+            getSupportFragmentManager().beginTransaction().replace(R.id.content_frame, new TrangChu()).commit();
+            navigationView.setCheckedItem(R.id.home);
         }
 
         navigationView.setNavigationItemSelectedListener(
                 new NavigationView.OnNavigationItemSelectedListener() {
                     @Override
                     public boolean onNavigationItemSelected(MenuItem menuItem) {
-                        // set item as selected to persist highlight
                         menuItem.setChecked(true);
-                        // close drawer when item is tapped
                         mDrawerLayout.closeDrawers();
-
-                        // Add code here to update the UI based on the item selected
-                        // For example, swap UI fragments here
 
                         switch (menuItem.getItemId()) {
                             case R.id.home:

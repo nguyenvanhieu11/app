@@ -1,5 +1,6 @@
 package com.crm.hieunc.app;
 
+import android.app.Activity;
 import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.Color;
@@ -41,12 +42,17 @@ public class SanPham extends AppCompatActivity {
     private BottomNavigationView nav_bottom;
     Toolbar toolbar;
 
-    String url = "http://192.168.1.143:8888/connectDB_to_android/getAllcongviec.php";
+    String url = "http://192.168.1.201:8888/connectDB_to_android/getAllcongviec.php";
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_sanpham);
+
+//        Intent intent = getIntent();
+//        Nghanh_nghe nghanh_nghe = (Nghanh_nghe) intent.getSerializableExtra("datanghanhnghe");
+//        Toast.makeText(this,nghanh_nghe.getTen_nghanh_nghe(), Toast.LENGTH_LONG).show();
+
         overridePendingTransition(R.anim.side_in_right, R.anim.slide_out_left);
         khoitao();
         adapter = new HomeAdapter(this, R.layout.home, arrayList);

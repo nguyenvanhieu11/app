@@ -9,6 +9,7 @@ import android.support.v7.widget.CardView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.Toast;
 
@@ -36,8 +37,7 @@ public class TrangChu extends Fragment {
     GridView gvNghanhnghe;
     ArrayList<Nghanh_nghe> arrayList;
     NghangngheAdapter adapter;
-    CardView cardView1, cardView2, cardView3, cardView4, cardView5;
-    String url = "http://192.168.1.143:8888/connectDB_to_android/getAllnghanhnghe.php";
+    String url = "http://192.168.1.201:8888/connectDB_to_android/getAllnghanhnghe.php";
 
     public static TrangChu newTrangChu() {
 
@@ -51,15 +51,9 @@ public class TrangChu extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.layout_nghanh_nghe, container, false);
 
-        cardView1 = (CardView) view.findViewById(R.id.cardviewone);
-        cardView2 = (CardView) view.findViewById(R.id.cardviewtow);
-        cardView3 = (CardView) view.findViewById(R.id.cardviewthree);
-        cardView4 = (CardView) view.findViewById(R.id.cardviewfour);
-        cardView5 = (CardView) view.findViewById(R.id.cardviewfine);
-
-
         gvNghanhnghe = (GridView) view.findViewById(R.id.nghanhnghe);
         arrayList = new ArrayList<>();
+
         RequestQueue requestQueue = Volley.newRequestQueue(getActivity());
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, url, null,
                 new Response.Listener<JSONArray>() {
@@ -70,7 +64,8 @@ public class TrangChu extends Fragment {
                                 JSONObject jsonObject = response.getJSONObject(i);
                                 arrayList.add(new Nghanh_nghe(
                                         jsonObject.getString("Ten_nghanh_nghe"),
-                                        jsonObject.getString("Mo_ta_nghanh_nghe")
+                                        jsonObject.getString("Mo_ta_nghanh_nghe"),
+                                        jsonObject.getInt("Id_nghanh_nghe")
                                 ));
                             } catch (JSONException e) {
                                 e.printStackTrace();
@@ -86,6 +81,7 @@ public class TrangChu extends Fragment {
                 }
         );
         requestQueue.add(jsonArrayRequest);
+
         adapter = new NghangngheAdapter(getActivity(), R.layout.dong_nghanh_nghe, arrayList);
         gvNghanhnghe.setAdapter(adapter);
 
