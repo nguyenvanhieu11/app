@@ -95,7 +95,7 @@ public class MainActivity extends AppCompatActivity {
             String result = "";
             try {
                 HttpClient httpclient = new DefaultHttpClient();
-                HttpPost httppost = new HttpPost("http://192.168.1.201:8888/connectDB_to_android/getVungmien.php");
+                HttpPost httppost = new HttpPost("http://192.168.220.1:8888/connectDB_to_android/vungmien.php");
                 HttpResponse response = httpclient.execute(httppost);
                 HttpEntity entity = response.getEntity();
                 // Get our response as a String.
