@@ -1,15 +1,12 @@
 package com.crm.hieunc.app;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v7.widget.CardView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.Toast;
 
@@ -30,15 +27,15 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-public class TrangChu extends Fragment {
+public class TrangChu extends Fragment implements PassData {
 
     private static final String DEBUG_TAG = "";
 
     GridView gvNghanhnghe;
     ArrayList<Nghanh_nghe> arrayList;
     NghangngheAdapter adapter;
-    String url = "http://192.168.1.201:8888/connectDB_to_android/getAllnghanhnghe.php";
-
+    String url = "http://192.168.1.229:8888/connectDB_to_android/nghanhnghe.php";
+    String urlnn = "http://192.168.1.229:8888/connectDB_to_android/congviec.php";
     public static TrangChu newTrangChu() {
 
         TrangChu trangChu = new TrangChu();
@@ -82,9 +79,40 @@ public class TrangChu extends Fragment {
         );
         requestQueue.add(jsonArrayRequest);
 
-        adapter = new NghangngheAdapter(getActivity(), R.layout.dong_nghanh_nghe, arrayList);
+        adapter = new NghangngheAdapter(getActivity(), R.layout.dong_nghanh_nghe, arrayList, this);
         gvNghanhnghe.setAdapter(adapter);
 
         return view;
+    }
+
+    @Override
+    public void passData(final Integer id) {
+        RequestQueue requestQueue = Volley.newRequestQueue(getActivity());
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, urlnn,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        if(response.trim().equals("success")){
+                            return;
+                        }
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Toast.makeText(getActivity(), error.toString(), Toast.LENGTH_SHORT).show();
+                    }
+                }
+        ){
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String, String> params = new HashMap<>();
+                params.put("ID_nghanh_nghe", String.valueOf(id));
+                return params;
+            }
+        };
+        requestQueue.add(stringRequest);
+        Toast.makeText(getActivity(), "xxxxx" + id, Toast.LENGTH_SHORT).show();
+
     }
 }

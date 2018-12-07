@@ -95,7 +95,7 @@ public class MainActivity extends AppCompatActivity {
             String result = "";
             try {
                 HttpClient httpclient = new DefaultHttpClient();
-                HttpPost httppost = new HttpPost("http://192.168.220.1:8888/connectDB_to_android/vungmien.php");
+                HttpPost httppost = new HttpPost("http://192.168.1.229:8888/connectDB_to_android/vungmien.php");
                 HttpResponse response = httpclient.execute(httppost);
                 HttpEntity entity = response.getEntity();
                 // Get our response as a String.
@@ -126,6 +126,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             } catch (JSONException e) {
                 e.printStackTrace();
+//                Toast.makeText(MainActivity.this,"lỗi", Toast.LENGTH_SHORT).show();
             }
             return null;
         }

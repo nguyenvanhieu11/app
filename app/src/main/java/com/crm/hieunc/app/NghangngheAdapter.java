@@ -3,30 +3,18 @@ package com.crm.hieunc.app;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.net.http.RequestQueue;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.android.volley.AuthFailureError;
-import com.android.volley.Request;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
-
-import java.lang.ref.ReferenceQueue;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public class NghangngheAdapter extends BaseAdapter {
+    private PassData passData;
 
     public static final String BUNDLE = "bundel";
     public static final String IDvungmien = "IDvungmien";
@@ -36,10 +24,11 @@ public class NghangngheAdapter extends BaseAdapter {
     private String Id_vung_mien;
 
 //    String url = "http://192.168.1.201:8888/connectDB_to_android/getAllnghanhnghe.php";
-    public NghangngheAdapter(Context context, int layout, ArrayList<Nghanh_nghe> nghanh_ngheList) {
+    public NghangngheAdapter(Context context, int layout, ArrayList<Nghanh_nghe> nghanh_ngheList, PassData passData) {
         this.context = context;
         this.layout = layout;
         this.nghanh_ngheList = nghanh_ngheList;
+        this.passData = passData;
     }
 
     @Override
@@ -96,9 +85,9 @@ public class NghangngheAdapter extends BaseAdapter {
         holder.ten_nghanhnghe.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                passData.passData(id_nghanh_nghe);
                 Intent intent = new Intent(context, SanPham.class);
                 context.startActivity(intent);
-                Toast.makeText(context, finalId + ", " + id_nghanh_nghe, Toast.LENGTH_LONG).show();
             }
         });
 

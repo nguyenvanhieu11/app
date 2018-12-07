@@ -1,6 +1,5 @@
 package com.crm.hieunc.app;
 
-import android.app.Activity;
 import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.Color;
@@ -186,12 +185,13 @@ public class SanPham extends AppCompatActivity {
                                 e.printStackTrace();
                             }
                         }
+                        Toast.makeText(SanPham.this, response.toString(),Toast.LENGTH_SHORT).show();
                     }
                 },
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(SanPham.this, error.toString(), Toast.LENGTH_LONG).show();
+                        Toast.makeText(SanPham.this, "Lỗi "+error.toString(), Toast.LENGTH_LONG).show();
                     }
                 }
         );
